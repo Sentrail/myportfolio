@@ -26,7 +26,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#0A2540] via-[#0D3A5F] to-[#0A2540]">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-[#0A2540] via-[#0D3A5F] to-[#0A2540]">
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -54,7 +54,7 @@ export default function HeroSection() {
           className="mb-8"
         >
           <div className="relative w-40 h-40 mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#00D4FF] to-[#0066FF] rounded-full blur-xl opacity-50 animate-pulse" />
+            <div className="absolute inset-0 bg-linear-to-r from-[#00D4FF] to-[#0066FF] rounded-full blur-xl opacity-50 animate-pulse" />
             <img
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
               alt="Professional Headshot"
@@ -70,7 +70,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl md:text-7xl font-bold text-white mb-6"
         >
-          <span className="bg-gradient-to-r from-white via-[#00D4FF] to-white bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-white via-[#00D4FF] to-white bg-clip-text text-transparent">
             Your Name
           </span>
         </motion.h1>

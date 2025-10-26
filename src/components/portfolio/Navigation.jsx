@@ -61,8 +61,8 @@ export default function Navigation() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="bg-gradient-to-r from-white to-[#00D4FF] bg-clip-text text-transparent">
-              YN
+            <span className="bg-linear-to-r from-white to-[#00D4FF] bg-clip-text text-transparent">
+              YUSUF T. ISRAEL
             </span>
           </motion.button>
 

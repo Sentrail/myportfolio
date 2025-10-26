@@ -37,7 +37,7 @@ export default function AboutSection() {
           <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] mb-4">
             About Me
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#00D4FF] to-[#0A2540] mx-auto" />
+          <div className="w-24 h-1 bg-linear-to-r from-[#00D4FF] to-[#0A2540] mx-auto" />
         </motion.div>
 
         {/* Bio */}
@@ -108,7 +108,7 @@ export default function AboutSection() {
           </h3>
           <div className="relative max-w-4xl mx-auto">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[#00D4FF] to-[#0A2540]" />
+            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-linear-to-b from-[#00D4FF] to-[#0A2540]" />
 
             {timeline.map((item, index) => (
               <motion.div

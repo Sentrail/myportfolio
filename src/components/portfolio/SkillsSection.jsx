@@ -53,7 +53,7 @@ export default function SkillsSection() {
           <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] mb-4">
             Technical Skills
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#00D4FF] to-[#0A2540] mx-auto mb-6" />
+          <div className="w-24 h-1 bg-linear-to-r from-[#00D4FF] to-[#0A2540] mx-auto mb-6" />
           <p className="text-[#1E293B] text-lg max-w-2xl mx-auto">
             Proficiency across modern web technologies and development tools
           </p>
@@ -95,9 +95,9 @@ export default function SkillsSection() {
                         whileInView={{ width: `${skill.level}%` }}
                         viewport={{ once: true }}
                         transition={{ duration: 1, delay: skillIndex * 0.1, ease: 'easeOut' }}
-                        className="h-full bg-gradient-to-r from-[#00D4FF] to-[#0066FF] rounded-full relative"
+                        className="h-full bg-linear-to-r from-[#00D4FF] to-[#0066FF] rounded-full relative"
                       >
-                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
+                        <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent animate-shimmer" />
                       </motion.div>
                     </div>
                   </motion.div>
@@ -106,6 +106,7 @@ export default function SkillsSection() {
             </motion.div>
           ))}
         </div>
+
 
         {/* Radial Skills Visualization */}
         <motion.div

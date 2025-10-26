@@ -63,7 +63,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-24 bg-gradient-to-br from-[#0A2540] via-[#0D3A5F] to-[#0A2540] overflow-hidden">
+    <section id="contact" className="relative py-24 bg-linear-to-br from-[#0A2540] via-[#0D3A5F] to-[#0A2540] overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#00D4FF]/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#00D4FF]/5 rounded-full blur-3xl" />
@@ -80,7 +80,7 @@ export default function ContactSection() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Let's Connect
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#00D4FF] to-white mx-auto mb-6" />
+          <div className="w-24 h-1 bg-linear-to-r from-[#00D4FF] to-white mx-auto mb-6" />
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             Have a project in mind or just want to chat? I'd love to hear from you!
           </p>
