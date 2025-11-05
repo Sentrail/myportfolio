@@ -63,7 +63,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="relative py-24 bg-linear-to-br from-[#0A2540] via-[#0D3A5F] to-[#0A2540] overflow-hidden">
+    <section id="contact" className="full-bleed contact-section relative py-24 bg-linear-to-br from-[#0A2540] via-[#0D3A5F] to-[#0A2540] overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#00D4FF]/10 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#00D4FF]/5 rounded-full blur-3xl" />
@@ -185,7 +185,7 @@ export default function ContactSection() {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full px-6 py-4 bg-[#00D4FF] text-[#0A2540] font-semibold rounded-lg hover:bg-[#00D4FF]/90 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    className="w-full px-6 py-4 bg-[#00D4FF] text-[#ffffff] font-semibold rounded-lg hover:bg-[#00D4FF]/90 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
                     {isLoading ? (
                       <>
@@ -296,7 +296,7 @@ export default function ContactSection() {
           className="text-center mt-16 pt-8 border-t border-white/10"
         >
           <p className="text-white/50">
-            © 2025 Your Name. Built with passion and modern web technologies.
+            © 2025 Yusuf Israel. Built with passion and modern web technologies.
           </p>
         </motion.footer>
       </div>

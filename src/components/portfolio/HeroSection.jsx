@@ -26,7 +26,8 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-[#0A2540] via-[#0D3A5F] to-[#0A2540]">
+    <section id="hero" className="full-bleed relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-[#0A2540] via-[#0D3A5F] to-[#0A2540]">
+      
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
@@ -56,7 +57,7 @@ export default function HeroSection() {
           <div className="relative w-40 h-40 mx-auto">
             <div className="absolute inset-0 bg-linear-to-r from-[#00D4FF] to-[#0066FF] rounded-full blur-xl opacity-50 animate-pulse" />
             <img
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+              src="/src/components/img/Me.jpg"
               alt="Professional Headshot"
               className="relative w-full h-full object-cover rounded-full border-4 border-[#00D4FF]/30"
             />
@@ -71,7 +72,7 @@ export default function HeroSection() {
           className="text-5xl md:text-7xl font-bold text-white mb-6"
         >
           <span className="bg-linear-to-r from-white via-[#00D4FF] to-white bg-clip-text text-transparent">
-            Your Name
+            YUSUF ISRAEL TIMILEYIN
           </span>
         </motion.h1>
 
@@ -81,7 +82,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-2xl md:text-4xl text-white/90 font-light mb-4"
         >
-          Frontend Developer | Aspiring Fullstack Engineer
+          Frontend Developer | Fullstack Engineer
         </motion.h2>
 
         <motion.p
@@ -103,10 +104,10 @@ export default function HeroSection() {
         >
           <button
             onClick={scrollToProjects}
-            className="group relative px-8 py-4 bg-[#00D4FF] text-[#0A2540] font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105"
+            className="group relative px-8 py-4 bg-[#00D4FF] text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105"
           >
             <span className="relative z-10">View Projects</span>
-            <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-[#00D4FF] opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
             <div className="absolute inset-0 shadow-[0_0_20px_rgba(0,212,255,0.5)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
 

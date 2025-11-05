@@ -13,6 +13,14 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  /* Portfolio Custom Vars: Bold, Stylish Blues */
+  --primary: #0A2540; /* Navy */
+  --secondary: #00D4FF; /* Cyan */
+  --neutral: #F8FAFC; /* Light BG */
+  --text: #1E293B; /* Dark Grey */
+  --font-bold: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
 
 a {
@@ -25,16 +33,20 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
+  margin: 0 !important;
   min-width: 320px;
   min-height: 100vh;
+  background: var(--neutral) !important; /* Default light neutral for sections */
+  color: var(--text);
+  font-family: var(--font-body);
+  overflow-x: hidden; /* Prevent bleed-induced scroll */
+  scroll-behavior: smooth; /* Smooth interactions */
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  font-family: var(--font-bold);
 }
 
 button {
@@ -57,12 +69,183 @@ button:focus-visible {
 }
 
 @keyframes shimmer {
-          0% {transform: translateX(-100%); }
-          100% {transform: translateX(100%); }
-        }
-        .animate-shimmer {
-          animation: shimmer 2s infinite;
-        }
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+/* Full-Bleed Utility: Edge-to-Edge Backgrounds (Bold Override) */
+.full-bleed {
+  position: relative;
+  overflow: hidden;
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-right: calc(-50vw + 50%) !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Hero/Content Bleed Refinements (Stylish Gradients) */
+.full-bleed.hero, .full-bleed.contact-section { /* Target dark sections */
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary), #1e3a8a) !important;
+  color: white !important;
+  padding: 2rem 0 !important; /* Top/bottom only */
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px; /* 7xl equiv */
+  margin: 0 auto;
+  width: 100%;
+  gap: 2.5rem; /* 10 equiv */
+  padding: 0 1.5rem; /* 6 equiv, responsive */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.hero-content.fade-in {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.hero-text {
+  flex: 1;
+  text-align: left;
+  max-width: 50%;
+}
+
+.heading {
+  font-family: var(--font-bold) !important;
+  font-size: clamp(2.5rem, 5vw, 4rem) !important;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.subtext {
+  font-size: clamp(1rem, 2.5vw, 1.3rem) !important;
+  opacity: 0.9;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.hero-description {
+  font-size: 1.1rem !important;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.ctas {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn.primary {
+  background: var(--secondary) !important;
+  color: var(--primary) !important;
+}
+
+.btn.primary:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 4px 12px rgba(0,212,255,0.4) !important;
+}
+
+.btn.secondary {
+  background: transparent;
+  color: rgb(255, 255, 255);
+  border: 2px solid white;
+}
+
+.btn.secondary:hover {
+  background: white !important;
+  color: var(--primary) !important;
+  transform: scale(1.05) !important;
+}
+
+.headshot-container {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.headshot {
+  width: clamp(200px, 25vw, 300px) !important;
+  height: clamp(200px, 25vw, 300px) !important;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(0,212,255,0.3) !important;
+  box-shadow: 0 0 20px rgba(0,212,255,0.2) !important;
+  transition: transform 0.3s ease;
+}
+
+.headshot:hover {
+  transform: scale(1.05) rotate(2deg) !important; /* Interactive appeal */
+}
+
+/* Mobile Stack (Responsive Ease) */
+@media (max-width: 768px) {
+  .full-bleed {
+    padding: 1rem 0 !important;
+    text-align: center;
+  }
+  
+  .hero-content {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 0 1rem;
+  }
+  
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .ctas {
+    justify-content: center;
+  }
+}
+
+/* Light Sections (Neutral BG, No Bleed Needed) */
+.about-section, .skills-section, .projects-section {
+  background: var(--neutral) !important;
+  padding: 6rem 0 !important; /* 24 equiv */
+}
+
+/* Nav: Fixed, Transparent on Hero */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: all 0.3s;
+  background: rgba(10, 37, 64, 0.95) !important; /* Semi-transparent navy */
+  backdrop-filter: blur(10px);
+}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -73,6 +256,42 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #0A2540;
+  }
+}
+
+/* Projects Bleed: Neutral Full-Width with Subtle Gradient (Stylish Appeal) */
+.full-bleed.projects-section {
+  background: #0A2540 !important; 
+  color: var(--text) !important;
+  padding: 6rem 0 !important; /* Top/bottom only */
+}
+
+.projects-content { /* Wrapper for inner content */
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 1.5rem; /* Content padding preserved */
+}
+
+/* Enhanced Project Cards (Interactive Boldness) */
+.project-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.project-card:hover {
+  transform: scale(1.05) !important;
+  box-shadow: 0 8px 25px rgba(0,212,255,0.2) !important; /* Cyan glow for appeal */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .full-bleed.projects-section {
+    padding: 4rem 0 !important;
+  }
+  
+  .projects-content {
+    padding: 0 1rem;
   }
 }
