@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
 export default function HeroSection() {
   const heroRef = useRef(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,9 +15,26 @@ export default function HeroSection() {
       }
     };
 
+    const updateMouse = (e) => {
+    mouseX.set(e.clientX - window.innerWidth / 2);
+    mouseY.set(e.clientY - window.innerHeight / 2);
+    };
+
+    window.addEventListener('mousemove', updateMouse);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const repelX = useTransform(mouseX, [-300, 300], [-70, 70]);
+const repelY = useTransform(mouseY, [-300, 300], [-50, 50]);
+
+// ← NEW: Orb data array (randomized on every load)
+const orbs = Array.from({ length: 5 }, (_, i) => ({
+  id: i,
+  size: Math.random() * 180 + 100,
+  duration: Math.random() * 25 + 30,
+  delay: i * 1.4,
+}));
 
   const scrollToProjects = () => {
     document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' });
@@ -45,6 +64,38 @@ export default function HeroSection() {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnptMCAxMmMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnptMCAxMmMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNnoiIHN0cm9rZT0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvZz48L3N2Zz4=')] opacity-20" />
       </div>
 
+            {/* ← NEW: Floating Geometric Orbs – Ethereal & Interactive */}
+      <div className="absolute inset-0 pointer-events-none">
+        {orbs.map((orb) => (
+          <motion.div
+            key={orb.id}
+            className="absolute rounded-full bg-gradient-to-br from-cyan-400/20 via-cyan-500/10 to-transparent blur-3xl"
+            style={{
+              width: orb.size,
+              height: orb.size,
+              left: '50%',
+              top: '50%',
+              x: repelX,
+              y: repelY,
+            }}
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{
+              x: ['-35vw', '35vw', '-35vw'],
+              y: ['-35vh', '35vh', '-35vh'],
+              scale: [0.9, 1.15, 0.9],
+              opacity: [0.15, 0.3, 0.15],
+            }}
+            transition={{
+              duration: orb.duration,
+              repeat: Infinity,
+              ease: 'linear',
+              delay: orb.delay,
+            }}
+            whileHover={{ scale: 1.6, opacity: 0.5 }}
+          />
+        ))}
+      </div>
+
       {/* Content */}
       <div ref={heroRef} className="relative z-10 max-w-6xl mx-auto px-6 text-center">
         {/* Profile Image */}
@@ -71,7 +122,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-5xl md:text-7xl font-bold text-white mb-6"
         >
-          <span className="bg-linear-to-r from-white via-[#00D4FF] to-white bg-clip-text text-transparent">
+          <span className="text-5xl md:text-7xl font-bold tracking-tight bg-linear-to-r from-white via-[#00D4FF] to-white bg-clip-text text-transparent">
             YUSUF ISRAEL TIMILEYIN
           </span>
         </motion.h1>
@@ -82,7 +133,7 @@ export default function HeroSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="text-2xl md:text-4xl text-white/90 font-light mb-4"
         >
-          Frontend Developer | Fullstack Engineer
+          Frontend Developer | Fullstack Engineer | Creative Coder
         </motion.h2>
 
         <motion.p
