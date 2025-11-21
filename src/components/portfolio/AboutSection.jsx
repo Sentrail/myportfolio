@@ -13,9 +13,10 @@ export default function AboutSection() {
   ];
 
   const timeline = [
-    { year: '2023', title: 'Started Frontend Journey', description: 'Mastered HTML, CSS, and JavaScript fundamentals' },
-    { year: '2024', title: 'Advanced JavaScript', description: 'React, Vue, and modern framework development' },
-    { year: '2024', title: 'Backend Exploration', description: 'PHP, MySQL, and API development' },
+    { year: '2021', title: 'Started Frontend Journey', description: 'HTML, CSS, and JavaScript fundamentals' },
+    { year: '2022', title: 'Started Frontend Journey', description: 'Mastered HTML, CSS, and JavaScript fundamentals' },
+    { year: '2023', title: 'Advanced JavaScript', description: 'React, TypeScript, and modern framework development' },
+    { year: '2024', title: 'Backend Exploration', description: 'PHP, MySQL, and API Integration' },
     { year: '2025', title: 'Fullstack Aspirations', description: 'Building complete web applications end-to-end' },
   ];
 
