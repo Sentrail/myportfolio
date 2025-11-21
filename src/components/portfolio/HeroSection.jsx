@@ -69,7 +69,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
         {orbs.map((orb) => (
           <motion.div
             key={orb.id}
-            className="absolute rounded-full bg-gradient-to-br from-cyan-400/20 via-cyan-500/10 to-transparent blur-3xl"
+            className="absolute rounded-full bg-linear-to-br from-cyan-400/20 via-cyan-500/10 to-transparent blur-3xl"
             style={{
               width: orb.size,
               height: orb.size,
