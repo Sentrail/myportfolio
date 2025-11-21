@@ -57,7 +57,7 @@ export default function HeroSection() {
           <div className="relative w-40 h-40 mx-auto">
             <div className="absolute inset-0 bg-linear-to-r from-[#00D4FF] to-[#0066FF] rounded-full blur-xl opacity-50 animate-pulse" />
             <img
-              src="/src/components/img/Me.jpg"
+              src="./src/components/img/Me.jpg"
               alt="Professional Headshot"
               className="relative w-full h-full object-cover rounded-full border-4 border-[#00D4FF]/30"
             />
