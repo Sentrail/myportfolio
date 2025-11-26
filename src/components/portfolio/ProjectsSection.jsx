@@ -68,6 +68,36 @@ export default function ProjectsSection() {
       liveUrl: '#',
       githubUrl: '#',
     },
+    {
+      id: 7,
+      title: 'Event Ticketing Website',
+      description: 'Event Ticketing and Monitoring website',
+      longDescription: 'A comprehensive tcketing application for monitoring tickets sales.',
+      image: '/img/ticket.jpeg',
+      tags: ['HTML', 'Javscript', 'CSS', 'Paystack'],
+      liveUrl: 'https://sentrail.github.io/Event_Ticketing_Website/',
+      githubUrl: 'https://github.com/Sentrail/Event_Ticketing_Website',
+    },
+    {
+      id: 8,
+      title: 'Farming Website',
+      description: 'Farm Produce/Products displaying website',
+      longDescription: 'A powerful and comprehensive application for displaying of farm produce.',
+      image: '/img/farm.avif',
+      tags: ['Javscript','HTML', 'CSS', 'Paystack'],
+      liveUrl: 'https://sentrail.github.io/Sunrise_Acre_Farm/',
+      githubUrl: 'https://github.com/Sentrail/Sunrise_Acre_Farm',
+    },
+    {
+      id: 1,
+      title: 'Photography Portfolio Website',
+      description: 'Photography Portfolio displaying website',
+      longDescription: 'An intuitive photopgrapy portfolio for displaying of shoots.',
+      image: '/img/photography.avif',
+      tags: ['Javscript','CSS','HTML'],
+      liveUrl: 'https://sentrail.github.io/Photography_Portfolio_Website/',
+      githubUrl: 'https://github.com/Sentrail/Photography_Portfolio_Website',
+    },
   ];
 
   return (
