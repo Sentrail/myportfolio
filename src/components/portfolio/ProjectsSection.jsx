@@ -60,11 +60,11 @@ export default function ProjectsSection() {
     },
     {
       id: 6,
-      title: 'Fitness Tracker',
+      title: 'Personal Fitness Tracker',
       description: 'Health and workout monitoring application',
       longDescription: 'A comprehensive fitness tracking application for monitoring workouts, nutrition, and progress. Features include workout logging, exercise library with animations, nutrition tracking, progress charts, and goal setting. Integrates with fitness APIs for extended functionality.',
       image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop',
-      tags: ['React Native', 'MongoDB', 'Chart.js'],
+      tags: ['React Native', 'Firestore(Firebase)', 'Chart.js'],
       liveUrl: '#',
       githubUrl: '#',
     },
@@ -89,7 +89,7 @@ export default function ProjectsSection() {
       githubUrl: 'https://github.com/Sentrail/Sunrise_Acre_Farm',
     },
     {
-      id: 1,
+      id: 9,
       title: 'Photography Portfolio Website',
       description: 'Photography Portfolio displaying website',
       longDescription: 'An intuitive photopgrapy portfolio for displaying of shoots.',
