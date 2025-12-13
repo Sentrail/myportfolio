@@ -98,6 +98,16 @@ export default function ProjectsSection() {
       liveUrl: 'https://sentrail.github.io/Photography_Portfolio_Website/',
       githubUrl: 'https://github.com/Sentrail/Photography_Portfolio_Website',
     },
+    {
+      id: 10,
+      title: 'Sacred Church Website',
+      description: 'A Place Where Faith Comes Alive. Explore inspiring sermons, grow in your spiritual journey, and connect with a welcoming faith community through messages on prayer, worship, grace, and fellowship.',
+      longDescription: 'Grace Community Church is a vibrant, faith-centered community dedicated to making faith come alive in everyday lives. Our website serves as a digital sanctuary where believers and seekers alike can deepen their spiritual journey through accessible, heartfelt resources. At the heart of our online presence is a comprehensive Sermon Archive, featuring powerful messages delivered by pastors like John Smith and Sarah Johnson. Organized into meaningful series such as Faith Journey, Prayer Warriors, Community & Fellowship, Grace Series, and Worship & Praise, each sermon explores timeless themes of walking in faith, the power of prayer, loving one another, finding peace amid chaos, abounding grace, and heartfelt worship. Users enjoy an intuitive, interactive experience with features like: Whether you\'re revisiting a favorite teaching or exploring faith for the first time, Grace Community Church online provides encouragement, inspiration, and practical biblical insights to nurture your relationship with God and others. Join us in this place where faith truly comes alive.',
+      image: '/img/church.jpg',
+      tags: ['Javscript','Tailwind CSS','TypeScript', 'React'],
+      liveUrl: '#',
+      githubUrl: 'https://github.com/Sentrail/sacred_site',
+    },
   ];
 
   return (
