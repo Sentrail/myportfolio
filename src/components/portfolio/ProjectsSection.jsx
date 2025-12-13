@@ -65,8 +65,8 @@ export default function ProjectsSection() {
       longDescription: 'A comprehensive fitness tracking application for monitoring workouts, nutrition, and progress. Features include workout logging, exercise library with animations, nutrition tracking, progress charts, and goal setting. Integrates with fitness APIs for extended functionality.',
       image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop',
       tags: ['React Native', 'Firestore(Firebase)', 'Chart.js'],
-      liveUrl: '#',
-      githubUrl: '#',
+      liveUrl: 'https://fitness-tracker-cdc8eygnh-yusuf-israels-projects.vercel.app/',
+      githubUrl: '#https://github.com/Sentrail/fitness_tracker',
     },
     {
       id: 7,
