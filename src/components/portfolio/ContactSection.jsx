@@ -52,8 +52,8 @@ export default function ContactSection() {
   };
 
   const socialLinks = [
-    { icon: Github, url: 'https://github.com', color: '#333' },
-    { icon: Linkedin, url: 'https://linkedin.com', color: '#0077B5' },
+    { icon: Github, url: 'https://github.com/Sentrail', color: '#333' },
+    { icon: Linkedin, url: 'https://linkedin.com/in/esentryc', color: '#0077B5' },
     { icon: Twitter, url: 'https://twitter.com', color: '#1DA1F2' },
     { icon: Mail, url: 'mailto:your.email@example.com', color: '#EA4335' },
   ];
