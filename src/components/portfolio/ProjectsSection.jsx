@@ -99,15 +99,16 @@ export default function ProjectsSection() {
       githubUrl: 'https://github.com/Sentrail/Photography_Portfolio_Website',
     },
     {
-      id: 10,
-      title: 'Sacred Church Website',
-      description: 'A Place Where Faith Comes Alive. Explore inspiring sermons, grow in your spiritual journey, and connect with a welcoming faith community through messages on prayer, worship, grace, and fellowship.',
-      longDescription: 'Grace Community Church is a vibrant, faith-centered community dedicated to making faith come alive in everyday lives. Our website serves as a digital sanctuary where believers and seekers alike can deepen their spiritual journey through accessible, heartfelt resources. At the heart of our online presence is a comprehensive Sermon Archive, featuring powerful messages delivered by pastors like John Smith and Sarah Johnson. Organized into meaningful series such as Faith Journey, Prayer Warriors, Community & Fellowship, Grace Series, and Worship & Praise, each sermon explores timeless themes of walking in faith, the power of prayer, loving one another, finding peace amid chaos, abounding grace, and heartfelt worship. Users enjoy an intuitive, interactive experience with features like: Whether you\'re revisiting a favorite teaching or exploring faith for the first time, Grace Community Church online provides encouragement, inspiration, and practical biblical insights to nurture your relationship with God and others. Join us in this place where faith truly comes alive.',
-      image: '/img/church.jpg',
-      tags: ['Javscript','Tailwind CSS','TypeScript', 'React'],
-      liveUrl: '#',
-      githubUrl: 'https://github.com/Sentrail/sacred_site',
+      id: 11,
+      title: 'Andys Grill Website',
+      description: 'The heart of Agege nightlife. We serve premium smoked meats, grilled specials, and chilled drinks around the clock.',
+      longDescription: 'Andy’s Smoke House & Grill is a premier destination for those who crave the real taste of smoke. Located in the vibrant LSDPC complex at Pen Cinema, we bridge the gap between quality casual dining and the exciting energy of Lagos nightlife.',
+      image: '/img/grill_1.jpeg',
+      tags: ['Javscript','Tailwind CSS','PHP', 'HTML'],
+      liveUrl: 'https://andys-grill.rf.gd/',
+      githubUrl: 'https://github.com/andys_grill',
     },
+
   ];
 
   return (
