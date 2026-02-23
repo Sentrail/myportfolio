@@ -6,7 +6,7 @@ export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   const projects = [
-    {
+   /* {
       id: 1,
       title: 'E-Commerce Platform',
       description: 'Full-featured online shopping platform with cart, checkout, and admin panel',
@@ -57,7 +57,7 @@ export default function ProjectsSection() {
       tags: ['Vue.js', 'Laravel', 'PostgreSQL'],
       liveUrl: '#',
       githubUrl: '#',
-    },
+    }, */
     {
       id: 6,
       title: 'Personal Fitness Tracker',
