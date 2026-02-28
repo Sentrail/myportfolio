@@ -138,6 +138,26 @@ export default function ProjectsSection() {
       liveUrl: 'https://texas-301.rf.gd/',
       githubUrl: 'https://github.com/Sentrail/texas_street_301',
     },
+    {
+      id: 15,
+      title: 'Mexa Cocina Website',
+      description: 'Mexa Cocina del Alma is a highly rated Mexican restaurant in Roma Norte, Mexico City, offering authentic cuisine, crafted cocktails, fine wine, and a cosy, romantic dining atmosphere.',
+      longDescription: 'Located in the vibrant neighborhood of Roma Norte, Mexa Cocina del Alma delivers an elevated Mexican dining experience built on authenticity, flavor, and hospitality. With an outstanding customer rating and hundreds of reviews, the restaurant has established itself as a favorite among locals and tourists alike.',
+      image: '/img/mexa.png',
+      tags: ['PHP', 'JavaScript', 'HTML', 'CSS'],
+      liveUrl: 'https://mexa-cocina.rf.gd/',
+      githubUrl: 'https://github.com/Sentrail/mexa_cocina',
+    },
+    {
+      id: 16,
+      title: 'KeySpice Restaurant Website',
+      description: 'KeySpice is a modern Nigerian restaurant website featuring a sleek design, responsive layout, and intuitive navigation for an enhanced user experience.',
+      longDescription: 'KeySpice is a contemporary Nigerian restaurant website built with modern web technologies. It features a responsive design that adapts to all devices, intuitive navigation for easy browsing, and a clean aesthetic that highlights the restaurant\'s culinary offerings.',
+      image: '/img/keyspice.png',
+      tags: ['PHP', 'JavaScript', 'HTML', 'CSS'],
+      liveUrl: 'https://keyspice_restaurant.rf.gd/',
+      githubUrl: 'https://github.com/Sentrail/keyspice_restaurant',
+    },
 
   ];
 
