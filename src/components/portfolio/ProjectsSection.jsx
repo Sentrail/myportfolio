@@ -116,7 +116,27 @@ export default function ProjectsSection() {
       image: '/img/taverna.png',
       tags: ['PHP', 'JavaScript', 'HTML', 'CSS'],
       liveUrl: 'https://la-taverna.rf.gd/?i=1',
-      githubUrl: '#https://github.com/Sentrail/fitness_tracker',
+      githubUrl: 'https://github.com/Sentrail/La_Taverna',
+    },
+    {
+      id: 13,
+      title: 'Cone Cafe Website',
+      description: 'Cone Café is a modern Lagos café offering quality coffee, desserts, and light meals in a cosy, trendy environment perfect for casual meetups and quick breaks.',
+      longDescription: 'Cone Café is a stylish and welcoming café in Lagos designed for relaxed coffee experiences and casual social gatherings. With a focus on specialty coffee, sweet treats, and light bites, the café provides a comfortable space for students, professionals, and friends to unwind.',
+      image: '/img/cone.png',
+      tags: ['PHP', 'JavaScript', 'HTML', 'CSS'],
+      liveUrl: 'https://Cone_Cafe.rf.gd/',
+      githubUrl: 'https://github.com/Sentrail/Cone_Cafe',
+    },
+    {
+      id: 14,
+      title: 'Texas 301 Website',
+      description: 'Texas Street 301 is a top-rated American restaurant in De Leon, Texas, serving comfort food, local specialties, and family-friendly dining in a cosy, casual setting.',
+      longDescription: 'Texas Street 301 is a highly regarded American restaurant located in De Leon, Texas, known for its welcoming atmosphere, fast service, and classic comfort food. With a strong community reputation and high customer ratings, it has become a staple for both locals and travelers.',
+      image: '/img/texas.png',
+      tags: ['PHP', 'JavaScript', 'HTML', 'CSS'],
+      liveUrl: 'https://texas-301.rf.gd/',
+      githubUrl: 'https://github.com/Sentrail/texas_street_301',
     },
 
   ];
