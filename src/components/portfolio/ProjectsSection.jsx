@@ -165,7 +165,7 @@ export default function ProjectsSection() {
       longDescription: 'KeySpice is a contemporary Nigerian restaurant website built with modern web technologies. It features a responsive design that adapts to all devices, intuitive navigation for easy browsing, and a clean aesthetic that highlights the restaurant\'s culinary offerings.',
       image: '/img/keyspice.png',
       tags: ['PHP', 'JavaScript', 'HTML', 'CSS'],
-      liveUrl: 'https://kingfisher.rf.gd/',
+      liveUrl: 'https://kingfisherafrica.rf.gd/',
       githubUrl: 'https://github.com/Sentrail/KingFisher_Africa',
     },
 
