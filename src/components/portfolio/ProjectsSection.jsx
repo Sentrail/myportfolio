@@ -108,6 +108,16 @@ export default function ProjectsSection() {
       liveUrl: 'https://andys-grill.rf.gd/',
       githubUrl: 'https://github.com/andys_grill',
     },
+    {
+      id: 12,
+      title: 'La Taverna Website',
+      description: 'La Taverna Lagos is an upscale Italian restaurant in Victoria Island offering authentic Italian cuisine, fine wines, and an elegant, romantic dining experience.',
+      longDescription: 'Known for its elegant atmosphere and carefully curated menu, the restaurant caters to professionals, couples, and expatriates seeking premium dining in Lagos. The menu features classic Italian dishes, expertly prepared pasta, desserts, and a carefully selected wine list designed to complement each course. With attentive table service and a calm, romantic setting, La Taverna is ideal for business dinners, date nights, and special celebrations. Its reputation for consistency, ambience, and culinary excellence positions it as one of Victoria Island’s distinguished Italian dining destinations.',
+      image: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop',
+      tags: ['PHP', 'JavaScript', 'HTML', 'CSS'],
+      liveUrl: 'https://la-taverna.rf.gd/?i=1',
+      githubUrl: '#https://github.com/Sentrail/fitness_tracker',
+    },
 
   ];
 
