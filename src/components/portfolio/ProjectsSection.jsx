@@ -158,6 +158,16 @@ export default function ProjectsSection() {
       liveUrl: 'https://keyspice_restaurant.rf.gd/',
       githubUrl: 'https://github.com/Sentrail/keyspice_restaurant',
     },
+    {
+      id: 17,
+      title: 'Kingfisher Restaurant Website',
+      description: 'KeySpice is a modern Nigerian restaurant website featuring a sleek design, responsive layout, and intuitive navigation for an enhanced user experience.',
+      longDescription: 'KeySpice is a contemporary Nigerian restaurant website built with modern web technologies. It features a responsive design that adapts to all devices, intuitive navigation for easy browsing, and a clean aesthetic that highlights the restaurant\'s culinary offerings.',
+      image: '/img/keyspice.png',
+      tags: ['PHP', 'JavaScript', 'HTML', 'CSS'],
+      liveUrl: 'https://kingfisher.rf.gd/',
+      githubUrl: 'https://github.com/Sentrail/KingFisher_Africa',
+    },
 
   ];
 
