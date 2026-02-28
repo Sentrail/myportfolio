@@ -161,9 +161,9 @@ export default function ProjectsSection() {
     {
       id: 17,
       title: 'Kingfisher Restaurant Website',
-      description: 'KeySpice is a modern Nigerian restaurant website featuring a sleek design, responsive layout, and intuitive navigation for an enhanced user experience.',
-      longDescription: 'KeySpice is a contemporary Nigerian restaurant website built with modern web technologies. It features a responsive design that adapts to all devices, intuitive navigation for easy browsing, and a clean aesthetic that highlights the restaurant\'s culinary offerings.',
-      image: '/img/keyspice.png',
+      description: 'Kingfisher Africa is a vibrant African restaurant in Lagos serving authentic Nigerian cuisine in a warm, family-friendly setting. Known for flavorful jollof rice, rich soups, grilled specialties, and generous portions, it’s a top destination for dine-in, takeaway, and group dining experiences.',
+      longDescription: 'Kingfisher Africa is a popular African restaurant in Lagos dedicated to delivering authentic Nigerian flavors in a welcoming and energetic dining environment. Combining traditional recipes with fresh ingredients and bold spices, the restaurant offers a rich culinary experience that celebrates the depth and diversity of African cuisine. Guests can enjoy a wide selection of local favorites, including jollof rice, soups and swallows, pepper soup, grilled meats, suya, seafood, and hearty rice-and-protein combinations. The menu is thoughtfully structured to cater to individuals, families, professionals, and groups looking for satisfying meals in a comfortable setting.',
+      image: '/img/kingfisher.png',
       tags: ['PHP', 'JavaScript', 'HTML', 'CSS'],
       liveUrl: 'https://kingfisherafrica.rf.gd/',
       githubUrl: 'https://github.com/Sentrail/KingFisher_Africa',
