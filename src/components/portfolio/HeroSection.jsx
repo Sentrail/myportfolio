@@ -69,7 +69,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
         {orbs.map((orb) => (
           <motion.div
             key={orb.id}
-            className="absolute rounded-full bg-linear-to-br from-cyan-400/20 via-cyan-500/10 to-transparent blur-3xl"
+            className="absolute rounded-full bg-linear-to-br from-[#00D4FF] via-[#deebff] to-transparent blur-3xl"
             style={{
               width: orb.size,
               height: orb.size,
@@ -97,15 +97,49 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
       </div>
 
       {/* Content */}
-      <div ref={heroRef} className="relative z-10 max-w-6xl mx-auto px-6 text-center">
-        {/* Profile Image */}
+      <div ref={heroRef} className="relative z-10 max-w-7xl mx-auto px-6 flex items-center justify-between gap-12 md:gap-16">
+        {/* Left Side - Text Content */}
+        <div className="flex-1 text-left">
+          {/* Main Heading */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="text-4xl md:text-6xl font-bold text-white mb-6"
+          >
+            <span className="text-4xl md:text-6xl font-bold tracking-tight bg-linear-to-r from-white via-[#00D4FF] to-white bg-clip-text text-transparent">
+              YUSUF ISRAEL TIMILEYIN
+            </span>
+          </motion.h1>
+
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-xl md:text-3xl text-white/90 font-light mb-4"
+          >
+            Frontend Developer | Fullstack Engineer | Creative Coder
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="text-base md:text-lg text-white/70 mb-12"
+          >
+            Crafting intuitive digital experiences with modern technologies.
+            Passionate about creating seamless user interfaces and robust backend systems.
+          </motion.p>
+        </div>
+
+        {/* Right Side - Profile Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="mb-8"
+          className="shrink-0"
         >
-          <div className="relative w-40 h-40 mx-auto">
+          <div className="relative w-40 h-40 md:w-56 md:h-56">
             <div className="absolute inset-0 bg-linear-to-r from-[#00D4FF] to-[#0066FF] rounded-full blur-xl opacity-50 animate-pulse" />
             <img
               src="/img/Me.jpg"
@@ -114,45 +148,15 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
             />
           </div>
         </motion.div>
+      </div>
 
-        {/* Main Heading */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-7xl font-bold text-white mb-6"
-        >
-          <span className="text-5xl md:text-7xl font-bold tracking-tight bg-linear-to-r from-white via-[#00D4FF] to-white bg-clip-text text-transparent">
-            YUSUF ISRAEL TIMILEYIN
-          </span>
-        </motion.h1>
-
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-2xl md:text-4xl text-white/90 font-light mb-4"
-        >
-          Frontend Developer | Fullstack Engineer | Creative Coder
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-lg md:text-xl text-white/70 max-w-3xl mx-auto mb-12"
-        >
-          Crafting intuitive digital experiences with modern technologies.
-          Passionate about creating seamless user interfaces and robust backend systems.
-        </motion.p>
-
-        {/* CTA Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-        >
+      {/* CTA Buttons */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        className="absolute z-10 flex flex-col sm:flex-row gap-4 justify-center items-center bottom-24 left-1/2 transform -translate-x-1/2"
+      >
           <button
             onClick={scrollToProjects}
             className="group relative px-8 py-4 bg-[#00D4FF] text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105"
@@ -171,7 +175,6 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
             <div className="absolute inset-0 shadow-[0_0_20px_rgba(0,212,255,0.3)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </button>
         </motion.div>
-      </div>
 
       {/* Scroll Indicator */}
       <motion.div

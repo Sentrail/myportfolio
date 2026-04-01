@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Github, Linkedin, Twitter, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import emailjs from '@emailjs/browser'; // Install via: npm install @emailjs/browser
+import './ContactSection.css'; // Import CSS for flying button animation
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -141,7 +142,7 @@ export default function ContactSection() {
                     <input
                       id="name"
                       type="text"
-                      name="from_name" // EmailJS param
+                      name="from_name"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -157,7 +158,7 @@ export default function ContactSection() {
                     <input
                       id="email"
                       type="email"
-                      name="from_email" // EmailJS param
+                      name="from_email"
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -172,7 +173,7 @@ export default function ContactSection() {
                     </label>
                     <textarea
                       id="message"
-                      name="message" // EmailJS param
+                      name="message"
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
@@ -185,17 +186,19 @@ export default function ContactSection() {
                   <button
                     type="submit"
                     disabled={isLoading}
-                    className="w-full px-6 py-4 bg-[#00D4FF] text-[#ffffff] font-semibold rounded-lg hover:bg-[#00D4FF]/90 transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                    className="flying-send-btn w-full disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isLoading ? (
                       <>
                         <div className="w-5 h-5 border-2 border-[#0A2540]/30 border-t-[#0A2540] rounded-full animate-spin" />
-                        Sending...
+                        <span>Sending...</span>
                       </>
                     ) : (
                       <>
-                        <Send size={20} />
-                        Send Message
+                        <div className="svg-wrapper">
+                          <Send size={20} />
+                        </div>
+                        <span>Send Message</span>
                       </>
                     )}
                   </button>
@@ -296,7 +299,7 @@ export default function ContactSection() {
           className="text-center mt-16 pt-8 border-t border-white/10"
         >
           <p className="text-white/50">
-            © 2025 Yusuf Israel. Built with passion and modern web technologies.
+            © 2025 - {new Date().getFullYear()} Yusuf Israel. Built with passion and modern web technologies.
           </p>
         </motion.footer>
       </div>
