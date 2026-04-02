@@ -23,6 +23,19 @@
   --font-body: 'Inter', sans-serif;
 }
 
+/* Dark Mode Styles */
+.dark {
+  --primary: #1e293b; /* Darker Navy */
+  --secondary: #00D4FF; /* Keep Cyan */
+  --neutral: #0f172a; /* Dark BG */
+  --text: #f1f5f9; /* Light Text */
+}
+
+.dark body {
+  background: var(--neutral) !important;
+  color: var(--text);
+}
+
 a {
   font-weight: 500;
   color: #646cff;

@@ -63,7 +63,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
   };
 
   return (
-    <section id="hero" className="full-bleed relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-[#0A2540] via-[#0D3A5F] to-[#0A2540]">
+    <section id="hero" className="full-bleed relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-[#0A2540] via-[#0D3A5F] to-[#0A2540] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -123,7 +123,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-6"
+            className="text-4xl md:text-6xl font-bold text-white mb-6 dark:text-gray-100"
           >
             <span className="text-4xl md:text-6xl font-bold tracking-tight bg-linear-to-r from-white via-[#00D4FF] to-white bg-clip-text text-transparent">
               YUSUF ISRAEL TIMILEYIN
@@ -134,7 +134,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-3xl text-white/90 font-light mb-4"
+            className="text-xl md:text-3xl text-white/90 font-light mb-4 dark:text-gray-300"
           >
             Frontend Developer | Fullstack Engineer | Creative Coder
           </motion.h2>
@@ -143,7 +143,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-base md:text-lg text-white/70 mb-12"
+            className="text-base md:text-lg text-white/70 mb-12 dark:text-gray-400"
           >
             Crafting intuitive digital experiences with modern technologies.
             Passionate about creating seamless user interfaces and robust backend systems.
@@ -190,7 +190,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
       >
           <button
             onClick={scrollToProjects}
-            className="group relative px-8 py-4 bg-[#00D4FF] text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105"
+            className="group relative px-8 py-4 bg-[#00D4FF] text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 dark:bg-[#00D4FF] dark:text-gray-900"
           >
             <span className="relative z-10">View Projects</span>
             <div className="absolute inset-0 bg-[#00D4FF] opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
@@ -199,7 +199,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
 
           <button
             onClick={scrollToContact}
-            className="group relative px-8 py-4 border-2 border-[#00D4FF] text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105"
+            className="group relative px-8 py-4 border-2 border-[#00D4FF] text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 dark:border-[#00D4FF] dark:text-gray-200 dark:hover:bg-[#00D4FF]/10"
           >
             <span className="relative z-10">Contact Me</span>
             <div className="absolute inset-0 bg-[#00D4FF] opacity-0 group-hover:opacity-10 transition-opacity duration-300" />
@@ -214,7 +214,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
         transition={{ duration: 2, repeat: Infinity, delay: 1 }}
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
       >
-        <ChevronDown className="w-8 h-8 text-white/50" />
+        <ChevronDown className="w-8 h-8 text-white/50 dark:text-gray-400" />
       </motion.div>
     </section>
   );

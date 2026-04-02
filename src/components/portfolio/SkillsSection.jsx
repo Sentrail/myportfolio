@@ -36,10 +36,10 @@ export default function SkillsSection() {
   ];
 
   return (
-    <section id="skills" className="relative py-24 bg-[#FAFAF9] overflow-hidden">
+    <section id="skills" className="relative py-24 bg-[#FAFAF9] dark:bg-gray-900 overflow-hidden">
       {/* Decorative Background */}
-      <div className="absolute top-1/4 left-0 w-72 h-72 bg-[#00D4FF]/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#0A2540]/10 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-0 w-72 h-72 bg-[#00D4FF]/10 dark:bg-[#00D4FF]/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#0A2540]/10 dark:bg-gray-800/20 rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Section Header */}
@@ -50,11 +50,11 @@ export default function SkillsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] dark:text-gray-100 mb-4">
             Technical Skills
           </h2>
-          <div className="w-24 h-1 bg-linear-to-r from-[#00D4FF] to-[#0A2540] mx-auto mb-6" />
-          <p className="text-[#1E293B] text-lg max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-linear-to-r from-[#00D4FF] to-[#0A2540] dark:from-[#00D4FF] dark:to-gray-400 mx-auto mb-6" />
+          <p className="text-[#1E293B] dark:text-gray-300 text-lg max-w-2xl mx-auto">
             Proficiency across modern web technologies and development tools
           </p>
         </motion.div>
@@ -68,9 +68,9 @@ export default function SkillsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
-              className="bg-white rounded-2xl p-8 shadow-xl"
+              className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl"
             >
-              <h3 className="text-2xl font-bold text-[#0A2540] mb-6 pb-4 border-b-2 border-[#00D4FF]/30">
+              <h3 className="text-2xl font-bold text-[#0A2540] dark:text-gray-100 mb-6 pb-4 border-b-2 border-[#00D4FF]/30 dark:border-gray-700/50">
                 {category.title}
               </h3>
 
@@ -84,12 +84,12 @@ export default function SkillsSection() {
                     transition={{ duration: 0.5, delay: skillIndex * 0.1 }}
                   >
                     <div className="flex justify-between mb-2">
-                      <span className="text-[#0A2540] font-medium">{skill.name}</span>
-                      <span className="text-[#00D4FF] font-semibold">{skill.level}%</span>
+                      <span className="text-[#0A2540] dark:text-gray-200 font-medium">{skill.name}</span>
+                      <span className="text-[#00D4FF] dark:text-[#00D4FF] font-semibold">{skill.level}%</span>
                     </div>
 
                     {/* Progress Bar */}
-                    <div className="relative h-3 bg-gray-200 rounded-full overflow-hidden">
+                    <div className="relative h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
@@ -114,9 +114,9 @@ export default function SkillsSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-16 bg-white rounded-2xl p-8 shadow-xl"
+          className="mt-16 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl"
         >
-          <h3 className="text-2xl font-bold text-[#0A2540] mb-8 text-center">
+          <h3 className="text-2xl font-bold text-[#0A2540] dark:text-gray-100 mb-8 text-center">
             Core Competencies Overview
           </h3>
 

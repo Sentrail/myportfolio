@@ -64,10 +64,10 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="full-bleed contact-section relative py-24 bg-linear-to-br from-[#0A2540] via-[#0D3A5F] to-[#0A2540] overflow-hidden">
+    <section id="contact" className="full-bleed contact-section relative py-24 bg-linear-to-br from-[#0A2540] via-[#0D3A5F] to-[#0A2540] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
       {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#00D4FF]/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#00D4FF]/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-[#00D4FF]/10 dark:bg-[#00D4FF]/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#00D4FF]/5 dark:bg-gray-800/20 rounded-full blur-3xl" />
 
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Section Header */}
@@ -78,11 +78,11 @@ export default function ContactSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white dark:text-gray-100 mb-4">
             Let's Connect
           </h2>
-          <div className="w-24 h-1 bg-linear-to-r from-[#00D4FF] to-white mx-auto mb-6" />
-          <p className="text-white/70 text-lg max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-linear-to-r from-[#00D4FF] to-white dark:from-[#00D4FF] dark:to-gray-400 mx-auto mb-6" />
+          <p className="text-white/70 dark:text-gray-300 text-lg max-w-2xl mx-auto">
             Have a project in mind or just want to chat? I'd love to hear from you!
           </p>
         </motion.div>
@@ -95,8 +95,8 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
+            <div className="bg-white/5 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10 dark:border-gray-700/50">
+              <h3 className="text-2xl font-bold text-white dark:text-gray-100 mb-6">Send a Message</h3>
 
               {isSubmitted ? (
                 <motion.div
@@ -105,10 +105,10 @@ export default function ContactSection() {
                   className="flex flex-col items-center justify-center py-12"
                 >
                   <CheckCircle className="w-16 h-16 text-[#00D4FF] mb-4" />
-                  <h4 className="text-xl font-semibold text-white mb-2">
+                  <h4 className="text-xl font-semibold text-white dark:text-gray-100 mb-2">
                     Message Sent Successfully!
                   </h4>
-                  <p className="text-white/70 text-center">
+                  <p className="text-white/70 dark:text-gray-300 text-center">
                     Thank you for reaching out. I'll get back to you soon!
                   </p>
                 </motion.div>
@@ -119,12 +119,12 @@ export default function ContactSection() {
                   className="flex flex-col items-center justify-center py-12 text-center"
                 >
                   <AlertCircle className="w-16 h-16 text-red-400 mb-4" />
-                  <h4 className="text-xl font-semibold text-white mb-2">Oops!</h4>
-                  <p className="text-red-300 max-w-md">{error}</p>
+                  <h4 className="text-xl font-semibold text-white dark:text-gray-100 mb-2">Oops!</h4>
+                  <p className="text-red-300 dark:text-red-400 max-w-md">{error}</p>
                   <button
                     type="button"
                     onClick={() => setError('')}
-                    className="mt-4 px-4 py-2 bg-white/10 text-white rounded-lg hover:bg-white/20 transition-colors"
+                    className="mt-4 px-4 py-2 bg-white/10 dark:bg-gray-700/50 text-white dark:text-gray-100 rounded-lg hover:bg-white/20 dark:hover:bg-gray-700 transition-colors"
                   >
                     Try Again
                   </button>
@@ -136,7 +136,7 @@ export default function ContactSection() {
                   <input type="hidden" name="message" value={formData.message} />
 
                   <div>
-                    <label htmlFor="name" className="block text-white/90 font-medium mb-2">
+                    <label htmlFor="name" className="block text-white/90 dark:text-gray-200 font-medium mb-2">
                       Your Name
                     </label>
                     <input
@@ -146,13 +146,13 @@ export default function ContactSection() {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-[#00D4FF] transition-colors duration-300"
+                      className="w-full px-4 py-3 bg-white/10 dark:bg-gray-700/50 border border-white/20 dark:border-gray-600/50 rounded-lg text-white dark:text-gray-100 placeholder-white/50 dark:placeholder-gray-400 focus:outline-none focus:border-[#00D4FF] transition-colors duration-300"
                       placeholder="John Doe"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-white/90 font-medium mb-2">
+                    <label htmlFor="email" className="block text-white/90 dark:text-gray-200 font-medium mb-2">
                       Email Address
                     </label>
                     <input
@@ -162,13 +162,13 @@ export default function ContactSection() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-[#00D4FF] transition-colors duration-300"
+                      className="w-full px-4 py-3 bg-white/10 dark:bg-gray-700/50 border border-white/20 dark:border-gray-600/50 rounded-lg text-white dark:text-gray-100 placeholder-white/50 dark:placeholder-gray-400 focus:outline-none focus:border-[#00D4FF] transition-colors duration-300"
                       placeholder="john@example.com"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-white/90 font-medium mb-2">
+                    <label htmlFor="message" className="block text-white/90 dark:text-gray-200 font-medium mb-2">
                       Message
                     </label>
                     <textarea
@@ -178,7 +178,7 @@ export default function ContactSection() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       rows={6}
-                      className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-[#00D4FF] transition-colors duration-300 resize-none"
+                      className="w-full px-4 py-3 bg-white/10 dark:bg-gray-700/50 border border-white/20 dark:border-gray-600/50 rounded-lg text-white dark:text-gray-100 placeholder-white/50 dark:placeholder-gray-400 focus:outline-none focus:border-[#00D4FF] transition-colors duration-300 resize-none"
                       placeholder="Tell me about your project..."
                     />
                   </div>
@@ -216,8 +216,8 @@ export default function ContactSection() {
             className="space-y-8"
           >
             {/* Social Links */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-6">Connect With Me</h3>
+            <div className="bg-white/5 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10 dark:border-gray-700/50">
+              <h3 className="text-2xl font-bold text-white dark:text-gray-100 mb-6">Connect With Me</h3>
               <div className="grid grid-cols-2 gap-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -230,7 +230,7 @@ export default function ContactSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     whileHover={{ scale: 1.05, y: -5 }}
-                    className="flex items-center gap-3 p-4 bg-white/10 rounded-xl hover:bg-white/20 transition-all duration-300 group"
+                    className="flex items-center gap-3 p-4 bg-white/10 dark:bg-gray-700/50 rounded-xl hover:bg-white/20 dark:hover:bg-gray-700 transition-all duration-300 group"
                   >
                     <div
                       className="w-12 h-12 rounded-full flex items-center justify-center"
@@ -238,7 +238,7 @@ export default function ContactSection() {
                     >
                       <social.icon size={24} style={{ color: social.color }} />
                     </div>
-                    <span className="text-white/90 group-hover:text-white font-medium">
+                    <span className="text-white/90 dark:text-gray-200 group-hover:text-white dark:group-hover:text-gray-100 font-medium">
                       {social.icon === Github && 'GitHub'}
                       {social.icon === Linkedin && 'LinkedIn'}
                       {social.icon === Twitter && 'Twitter'}
@@ -250,23 +250,23 @@ export default function ContactSection() {
             </div>
 
             {/* Additional Info */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-4">Let's Build Something Amazing</h3>
-              <p className="text-white/70 leading-relaxed mb-6">
+            <div className="bg-white/5 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10 dark:border-gray-700/50">
+              <h3 className="text-2xl font-bold text-white dark:text-gray-100 mb-4">Let's Build Something Amazing</h3>
+              <p className="text-white/70 dark:text-gray-300 leading-relaxed mb-6">
                 I'm always excited to work on new projects and collaborate with talented people. 
                 Whether you have a specific idea or just want to explore possibilities, let's connect!
               </p>
-              <div className="space-y-3 text-white/60">
+              <div className="space-y-3 text-white/60 dark:text-gray-400">
                 <p className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#00D4FF] rounded-full" />
+                  <span className="w-2 h-2 bg-[#00D4FF] dark:bg-[#00D4FF] rounded-full" />
                   Available for freelance projects
                 </p>
                 <p className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#00D4FF] rounded-full" />
+                  <span className="w-2 h-2 bg-[#00D4FF] dark:bg-[#00D4FF] rounded-full" />
                   Open to full-time opportunities
                 </p>
                 <p className="flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#00D4FF] rounded-full" />
+                  <span className="w-2 h-2 bg-[#00D4FF] dark:bg-[#00D4FF] rounded-full" />
                   Response within 24 hours
                 </p>
               </div>

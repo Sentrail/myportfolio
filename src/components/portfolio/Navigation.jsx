@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navigation() {
@@ -7,6 +7,7 @@ export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isVisible, setIsVisible] = useState(true);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   const navItems = [
     { label: 'Home', href: '#hero' },
@@ -35,6 +36,33 @@ export default function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  // Theme management
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      setIsDarkMode(true);
+      document.documentElement.classList.add('dark');
+    } else {
+      setIsDarkMode(false);
+      document.documentElement.classList.remove('dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = !isDarkMode;
+    setIsDarkMode(newTheme);
+    
+    if (newTheme) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  };
+
   const scrollToSection = (href) => {
     setIsMenuOpen(false);
     const element = document.querySelector(href);
@@ -49,7 +77,7 @@ export default function Navigation() {
       animate={{ y: isVisible ? 0 : -100 }}
       transition={{ duration: 0.3 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#0A2540]/95 backdrop-blur-md shadow-lg' : 'bg-[#0A2540] backdrop-blur-sm'
+        isScrolled ? 'bg-[#0A2540]/95 dark:bg-gray-100/95 backdrop-blur-md shadow-lg' : 'bg-[#0A2540] dark:bg-gray-100 backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
@@ -57,11 +85,11 @@ export default function Navigation() {
           {/* Logo */}
           <motion.button
             onClick={() => scrollToSection('#hero')}
-            className="text-2xl font-bold text-white hover:text-[#00D4FF] transition-colors duration-300"
+            className="text-2xl font-bold text-white dark:text-gray-900 hover:text-[#00D4FF] dark:hover:text-[#0066FF] transition-colors duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="bg-linear-to-r from-white to-[#00D4FF] bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-white to-[#00D4FF] dark:from-gray-900 dark:to-[#00D4FF] bg-clip-text text-transparent">
               YUSUF ISRAEL T.
             </span>
           </motion.button>
@@ -72,12 +100,45 @@ export default function Navigation() {
               <button
                 key={item.label}
                 onClick={() => scrollToSection(item.href)}
-                className="bg-[#0A2540]/50 backdrop-blur-sm text-white/90 hover:text-[#00D4FF] font-medium transition-all duration-300 relative group rounded-md px-4 py-2 hover:bg-[#0A2540]/95 shadow-sm" // Navy base, no white
+                className="bg-[#0A2540]/50 backdrop-blur-sm text-white/90 hover:text-[#00D4FF] font-medium transition-all duration-300 relative group rounded-md px-4 py-2 hover:bg-[#0A2540]/95 shadow-sm dark:bg-gray-800/50 dark:hover:bg-gray-800/95" // Navy base, no white
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#00D4FF] group-hover:w-full transition-all duration-300" />
               </button>
             ))}
+            
+            {/* Theme Toggle Button */}
+            <motion.button
+              onClick={toggleTheme}
+              className="p-2 rounded-lg bg-[#0A2540]/50 dark:bg-gray-200/50 backdrop-blur-sm hover:bg-[#0A2540]/95 dark:hover:bg-gray-200/95 text-white/90 dark:text-gray-800/90 hover:text-[#00D4FF] dark:hover:text-[#0066FF] transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label="Toggle theme"
+            >
+              <AnimatePresence mode="wait">
+                {isDarkMode ? (
+                  <motion.div
+                    key="sun"
+                    initial={{ rotate: -90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: 90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Sun size={20} />
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="moon"
+                    initial={{ rotate: 90, opacity: 0 }}
+                    animate={{ rotate: 0, opacity: 1 }}
+                    exit={{ rotate: -90, opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <Moon size={20} />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -98,7 +159,7 @@ export default function Navigation() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.3 }}
-            className="md:hidden fixed inset-y-0 right-0 w-64 bg-[#0A2540] shadow-2xl"
+            className="md:hidden fixed inset-y-0 right-0 w-64 bg-[#0A2540] dark:bg-gray-100 shadow-2xl"
           >
             <div className="flex flex-col space-y-6 p-8 pt-20">
               {navItems.map((item, index) => (
@@ -108,11 +169,45 @@ export default function Navigation() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-white hover:text-[#00D4FF] text-xl font-medium transition-colors duration-300 text-left"
+                  className="text-white hover:text-[#00D4FF] text-xl font-medium transition-colors duration-300 text-left dark:text-gray-200 dark:hover:text-[#00D4FF]"
                 >
                   {item.label}
                 </motion.button>
               ))}
+              
+              {/* Mobile Theme Toggle */}
+              <motion.button
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navItems.length * 0.1 }}
+                onClick={toggleTheme}
+                className="flex items-center gap-3 text-white dark:text-gray-900 hover:text-[#00D4FF] dark:hover:text-[#0066FF] text-xl font-medium transition-colors duration-300 text-left"
+              >
+                <AnimatePresence mode="wait">
+                  {isDarkMode ? (
+                    <motion.div
+                      key="sun-mobile"
+                      initial={{ rotate: -90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: 90, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Sun size={24} />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="moon-mobile"
+                      initial={{ rotate: 90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: -90, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Moon size={24} />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+                <span>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
+              </motion.button>
             </div>
           </motion.div>
         )}
