@@ -1,11 +1,20 @@
-import React, { useEffect, useRef } from 'react';
-import { motion, useMotionValue, useTransform } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import { motion, useMotionValue, useTransform, AnimatePresence } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
 export default function HeroSection() {
   const heroRef = useRef(null);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Array of images to cycle through
+  const images = [
+    '/img/Sentry_B&W.png',
+    '/img/Villain_1.png',
+    '/img/Villain_2.png',
+    // Add more image paths here
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,6 +33,15 @@ export default function HeroSection() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Image carousel interval
+  useEffect(() => {
+    const imageInterval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 5000); // Change image every 5 seconds
+
+    return () => clearInterval(imageInterval);
+  }, [images.length]);
 
   const repelX = useTransform(mouseX, [-300, 300], [-70, 70]);
 const repelY = useTransform(mouseY, [-300, 300], [-50, 50]);
@@ -69,7 +87,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
         {orbs.map((orb) => (
           <motion.div
             key={orb.id}
-            className="absolute rounded-full bg-linear-to-br from-[#00D4FF] via-[#deebff] to-transparent blur-3xl"
+            className="absolute rounded-full bg-linear-to-br from-[#00D4FF] via-[#27d4ff] to-transparent blur-3xl"
             style={{
               width: orb.size,
               height: orb.size,
@@ -97,7 +115,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
       </div>
 
       {/* Content */}
-      <div ref={heroRef} className="relative z-10 max-w-7xl mx-auto px-6 flex items-center justify-between gap-12 md:gap-16">
+      <div ref={heroRef} className="relative z-10 max-w-7xl mx-auto px-6 flex items-center justify-between gap-12 md:gap-16 pt-20">
         {/* Left Side - Text Content */}
         <div className="flex-1 text-left">
           {/* Main Heading */}
@@ -137,15 +155,28 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="shrink-0"
+          className="shrink-0 -mt-50"
         >
-          <div className="relative w-40 h-40 md:w-56 md:h-56">
-            <div className="absolute inset-0 bg-linear-to-r from-[#00D4FF] to-[#0066FF] rounded-full blur-xl opacity-50 animate-pulse" />
-            <img
-              src="/img/Me.jpg"
-              alt="Professional Headshot"
-              className="relative w-full h-full object-cover rounded-full border-4 border-[#00D4FF]/30"
-            />
+          <div className="relative w-52 h-52 md:w-72 md:h-72 overflow-hidden">
+            {/* White background */}
+            <div className="absolute inset-0 bg-white" />
+            {/* Image with white border and glow - cycles through images */}
+            <AnimatePresence mode="wait">
+              <motion.img
+                key={currentImageIndex}
+                src={images[currentImageIndex]}
+                alt="Professional Headshot"
+                className="relative w-full h-auto object-cover z-10 border-4 border-white"
+                style={{
+                  boxShadow: '0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.3)',
+                  borderRadius: '20px 0 20px 0'
+                }}
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -100 }}
+                transition={{ duration: 1.5 }}
+              />
+            </AnimatePresence>
           </div>
         </motion.div>
       </div>
