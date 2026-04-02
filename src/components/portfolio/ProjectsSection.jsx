@@ -4,6 +4,8 @@ import { ExternalLink, Github, X } from 'lucide-react';
 
 export default function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(null);
+  const [showAllProjectsModal, setShowAllProjectsModal] = useState(false);
+  const [projectOpenedFromAllProjectsModal, setProjectOpenedFromAllProjectsModal] = useState(false);
 
   const projects = [
    /* {
@@ -198,7 +200,7 @@ export default function ProjectsSection() {
 
         {/* Projects Grid - Bento Style */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
+          {projects.slice(0, 6).map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
@@ -268,6 +270,29 @@ export default function ProjectsSection() {
             </motion.div>
           ))}
         </div>
+
+        {/* View All Projects Button */}
+        {projects.length > 6 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="text-center mt-12"
+          >
+            <button
+              onClick={() => setShowAllProjectsModal(true)}
+              className="group relative px-8 py-4 bg-[#cdf7ff] text-[#0080ff] font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105"
+            >
+              <span className="relative z-10">
+                View All Projects
+              </span>
+              <div className="absolute inset-0 bg-[#00D4FF] opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+              <div className="absolute inset-0 shadow-[0_0_20px_rgba(0,212,255,0.5)] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </button>
+          </motion.div>
+        )}
+
       </div>
 
       {/* Project Modal */}
@@ -278,7 +303,13 @@ export default function ProjectsSection() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
-            onClick={() => setSelectedProject(null)}
+            onClick={() => {
+              setSelectedProject(null);
+              if (projectOpenedFromAllProjectsModal) {
+                setShowAllProjectsModal(true);
+                setProjectOpenedFromAllProjectsModal(false);
+              }
+            }}
           >
             <motion.div
               initial={{ scale: 0.9, y: 20 }}
@@ -289,7 +320,13 @@ export default function ProjectsSection() {
             >
               {/* Close Button */}
               <button
-                onClick={() => setSelectedProject(null)}
+                onClick={() => {
+                  setSelectedProject(null);
+                  if (projectOpenedFromAllProjectsModal) {
+                    setShowAllProjectsModal(true);
+                    setProjectOpenedFromAllProjectsModal(false);
+                  }
+                }}
                 className="absolute top-4 right-4 z-10 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors duration-300"
               >
                 <X className="text-white" />
@@ -339,6 +376,127 @@ export default function ProjectsSection() {
                       View Code
                     </a>
                   </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* All Projects Modal */}
+      <AnimatePresence>
+        {showAllProjectsModal && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-md"
+            onClick={() => setShowAllProjectsModal(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              className="relative max-w-7xl w-full max-h-[90vh] bg-[#0A2540] rounded-2xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setShowAllProjectsModal(false)}
+                className="absolute top-4 right-4 z-10 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors duration-300"
+              >
+                <X className="text-white" />
+              </button>
+
+              {/* Modal Header */}
+              <div className="p-8 pb-6">
+                <h3 className="text-3xl font-bold text-white mb-2">
+                  All Projects
+                </h3>
+                <p className="text-white/70">
+                  Complete showcase of my work across different technologies and domains
+                </p>
+              </div>
+
+              {/* Projects Grid in Modal */}
+              <div className="px-8 pb-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[60vh] overflow-y-auto">
+                  {projects.map((project, index) => (
+                    <motion.div
+                      key={project.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
+                      className={`group cursor-pointer ${project.featured ? 'md:col-span-2 lg:row-span-2' : ''}`}
+                      onClick={() => {
+                        setShowAllProjectsModal(false);
+                        setProjectOpenedFromAllProjectsModal(true);
+                        setSelectedProject(project);
+                      }}
+                    >
+                      <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-[#00D4FF]/50 transition-all duration-300">
+                        {/* Image */}
+                        <div className="relative h-48 overflow-hidden">
+                          <img
+                            src={project.image}
+                            alt={project.title}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                          />
+                          <div className="absolute inset-0 bg-linear-to-t from-[#0A2540] via-[#0A2540]/50 to-transparent" />
+                        </div>
+
+                        {/* Content */}
+                        <div className="p-4">
+                          <h4 className="text-xl font-bold text-white mb-2 group-hover:text-[#00D4FF] transition-colors duration-300">
+                            {project.title}
+                          </h4>
+                          <p className="text-white/70 text-sm mb-3 line-clamp-2">{project.description}</p>
+
+                          {/* Tags */}
+                          <div className="flex flex-wrap gap-1 mb-3">
+                            {project.tags.slice(0, 3).map((tag) => (
+                              <span
+                                key={tag}
+                                className="px-2 py-1 bg-[#00D4FF]/20 text-[#00D4FF] text-xs rounded-full border border-[#00D4FF]/30"
+                              >
+                                {tag}
+                              </span>
+                            ))}
+                            {project.tags.length > 3 && (
+                              <span className="px-2 py-1 bg-white/10 text-white/60 text-xs rounded-full">
+                                +{project.tags.length - 3}
+                              </span>
+                            )}
+                          </div>
+
+                          {/* Links */}
+                          <div className="flex gap-3">
+                            <a
+                              href={project.liveUrl}
+                              onClick={(e) => e.stopPropagation()}
+                              className="flex items-center gap-1 text-white/70 hover:text-[#00D4FF] transition-colors duration-300 text-sm"
+                            >
+                              <ExternalLink size={14} />
+                              <span>Live</span>
+                            </a>
+                            <a
+                              href={project.githubUrl}
+                              onClick={(e) => e.stopPropagation()}
+                              className="flex items-center gap-1 text-white/70 hover:text-[#00D4FF] transition-colors duration-300 text-sm"
+                            >
+                              <Github size={14} />
+                              <span>Code</span>
+                            </a>
+                          </div>
+                        </div>
+
+                        {/* Hover Glow Effect */}
+                        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                          <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(0,212,255,0.2)]" />
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
             </motion.div>

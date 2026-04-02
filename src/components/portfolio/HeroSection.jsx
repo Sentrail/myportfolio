@@ -154,22 +154,22 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          className="shrink-0 -mt-50"
+          transition={{ duration: 0.5 }}
+          className="shrink-0 -mt-50 -mb-40 pt-1 pb-15"
         >
-          <div className="relative w-52 h-52 md:w-72 md:h-72 overflow-hidden">
+          <div className="relative w-56 h-80 md:w-72 md:h-96 overflow-hidden rounded-[20px]">
             {/* White background */}
-            <div className="absolute inset-0 bg-white" />
+            <div className="absolute inset-0 bg-white rounded-[28px] border-4 border-white/60"/>
             {/* Image with white border and glow - cycles through images */}
             <AnimatePresence mode="wait">
               <motion.img
                 key={currentImageIndex}
                 src={images[currentImageIndex]}
                 alt="Professional Headshot"
-                className="relative w-full h-auto object-cover z-10 border-4 border-white"
+                className="relative w-full h-auto object-contain z-10 border-4 border-white"
                 style={{
                   boxShadow: '0 0 20px rgba(255, 255, 255, 0.6), 0 0 40px rgba(255, 255, 255, 0.3)',
-                  borderRadius: '20px 0 20px 0'
+                  borderRadius: '20px 20px 20px 20px'
                 }}
                 initial={{ opacity: 0, x: 100 }}
                 animate={{ opacity: 1, x: 0 }}
