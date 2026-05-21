@@ -64,12 +64,12 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="full-bleed contact-section relative py-24 bg-linear-to-br from-[#0A2540] via-[#0D3A5F] to-[#0A2540] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
+    <section id="contact" className="full-bleed contact-section relative py-16 sm:py-24 bg-linear-to-br from-[#0A2540] via-[#0D3A5F] to-[#0A2540] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 overflow-hidden">
       {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#00D4FF]/10 dark:bg-[#00D4FF]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#00D4FF]/5 dark:bg-gray-800/20 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-[#00D4FF]/10 dark:bg-[#00D4FF]/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-[#00D4FF]/5 dark:bg-gray-800/20 rounded-full blur-3xl" />
 
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -78,16 +78,16 @@ export default function ContactSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-white dark:text-gray-100 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white dark:text-gray-100 mb-4">
             Let's Connect
           </h2>
           <div className="w-24 h-1 bg-linear-to-r from-[#00D4FF] to-white dark:from-[#00D4FF] dark:to-gray-400 mx-auto mb-6" />
-          <p className="text-white/70 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-white/70 dark:text-gray-300 text-base sm:text-lg max-w-2xl mx-auto">
             Have a project in mind or just want to chat? I'd love to hear from you!
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-start">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -105,10 +105,10 @@ export default function ContactSection() {
                   className="flex flex-col items-center justify-center py-12"
                 >
                   <CheckCircle className="w-16 h-16 text-[#00D4FF] mb-4" />
-                  <h4 className="text-xl font-semibold text-white dark:text-gray-100 mb-2">
+                  <h4 className="text-lg sm:text-xl font-semibold text-white dark:text-gray-100 mb-2">
                     Message Sent Successfully!
                   </h4>
-                  <p className="text-white/70 dark:text-gray-300 text-center">
+                  <p className="text-sm sm:text-base text-white/70 dark:text-gray-300 text-center">
                     Thank you for reaching out. I'll get back to you soon!
                   </p>
                 </motion.div>
@@ -119,8 +119,8 @@ export default function ContactSection() {
                   className="flex flex-col items-center justify-center py-12 text-center"
                 >
                   <AlertCircle className="w-16 h-16 text-red-400 mb-4" />
-                  <h4 className="text-xl font-semibold text-white dark:text-gray-100 mb-2">Oops!</h4>
-                  <p className="text-red-300 dark:text-red-400 max-w-md">{error}</p>
+                  <h4 className="text-lg sm:text-xl font-semibold text-white dark:text-gray-100 mb-2">Oops!</h4>
+                  <p className="text-sm sm:text-base text-red-300 dark:text-red-400 max-w-md">{error}</p>
                   <button
                     type="button"
                     onClick={() => setError('')}
@@ -136,7 +136,7 @@ export default function ContactSection() {
                   <input type="hidden" name="message" value={formData.message} />
 
                   <div>
-                    <label htmlFor="name" className="block text-white/90 dark:text-gray-200 font-medium mb-2">
+                    <label htmlFor="name" className="block text-sm sm:text-base text-white/90 dark:text-gray-200 font-medium mb-2">
                       Your Name
                     </label>
                     <input
@@ -146,13 +146,13 @@ export default function ContactSection() {
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-white/10 dark:bg-gray-700/50 border border-white/20 dark:border-gray-600/50 rounded-lg text-white dark:text-gray-100 placeholder-white/50 dark:placeholder-gray-400 focus:outline-none focus:border-[#00D4FF] transition-colors duration-300"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white/10 dark:bg-gray-700/50 border border-white/20 dark:border-gray-600/50 rounded-lg text-white dark:text-gray-100 placeholder-white/50 dark:placeholder-gray-400 focus:outline-none focus:border-[#00D4FF] transition-colors duration-300"
                       placeholder="John Doe"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-white/90 dark:text-gray-200 font-medium mb-2">
+                    <label htmlFor="email" className="block text-sm sm:text-base text-white/90 dark:text-gray-200 font-medium mb-2">
                       Email Address
                     </label>
                     <input
@@ -162,13 +162,13 @@ export default function ContactSection() {
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="w-full px-4 py-3 bg-white/10 dark:bg-gray-700/50 border border-white/20 dark:border-gray-600/50 rounded-lg text-white dark:text-gray-100 placeholder-white/50 dark:placeholder-gray-400 focus:outline-none focus:border-[#00D4FF] transition-colors duration-300"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white/10 dark:bg-gray-700/50 border border-white/20 dark:border-gray-600/50 rounded-lg text-white dark:text-gray-100 placeholder-white/50 dark:placeholder-gray-400 focus:outline-none focus:border-[#00D4FF] transition-colors duration-300"
                       placeholder="john@example.com"
                     />
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-white/90 dark:text-gray-200 font-medium mb-2">
+                    <label htmlFor="message" className="block text-sm sm:text-base text-white/90 dark:text-gray-200 font-medium mb-2">
                       Message
                     </label>
                     <textarea
@@ -177,8 +177,8 @@ export default function ContactSection() {
                       required
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      rows={6}
-                      className="w-full px-4 py-3 bg-white/10 dark:bg-gray-700/50 border border-white/20 dark:border-gray-600/50 rounded-lg text-white dark:text-gray-100 placeholder-white/50 dark:placeholder-gray-400 focus:outline-none focus:border-[#00D4FF] transition-colors duration-300 resize-none"
+                      rows={5}
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base bg-white/10 dark:bg-gray-700/50 border border-white/20 dark:border-gray-600/50 rounded-lg text-white dark:text-gray-100 placeholder-white/50 dark:placeholder-gray-400 focus:outline-none focus:border-[#00D4FF] transition-colors duration-300 resize-none"
                       placeholder="Tell me about your project..."
                     />
                   </div>
@@ -250,13 +250,13 @@ export default function ContactSection() {
             </div>
 
             {/* Additional Info */}
-            <div className="bg-white/5 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-8 border border-white/10 dark:border-gray-700/50">
-              <h3 className="text-2xl font-bold text-white dark:text-gray-100 mb-4">Let's Build Something Amazing</h3>
-              <p className="text-white/70 dark:text-gray-300 leading-relaxed mb-6">
+            <div className="bg-white/5 dark:bg-gray-800/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/10 dark:border-gray-700/50">
+              <h3 className="text-xl sm:text-2xl font-bold text-white dark:text-gray-100 mb-3 sm:mb-4">Let's Build Something Amazing</h3>
+              <p className="text-sm sm:text-base text-white/70 dark:text-gray-300 leading-relaxed mb-4 sm:mb-6">
                 I'm always excited to work on new projects and collaborate with talented people. 
                 Whether you have a specific idea or just want to explore possibilities, let's connect!
               </p>
-              <div className="space-y-3 text-white/60 dark:text-gray-400">
+              <div className="space-y-2 sm:space-y-3 text-xs sm:text-sm text-white/60 dark:text-gray-400">
                 <p className="flex items-center gap-2">
                   <span className="w-2 h-2 bg-[#00D4FF] dark:bg-[#00D4FF] rounded-full" />
                   Available for freelance projects
@@ -296,9 +296,9 @@ export default function ContactSection() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center mt-16 pt-8 border-t border-white/10"
+          className="text-center mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-white/10"
         >
-          <p className="text-white/50">
+          <p className="text-xs sm:text-sm text-white/50">
             © 2025 - {new Date().getFullYear()} Yusuf Israel. Built with passion and modern web technologies.
           </p>
         </motion.footer>

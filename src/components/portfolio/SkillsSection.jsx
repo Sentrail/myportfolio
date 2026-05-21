@@ -36,12 +36,12 @@ export default function SkillsSection() {
   ];
 
   return (
-    <section id="skills" className="relative py-24 bg-[#FAFAF9] dark:bg-gray-900 overflow-hidden">
+    <section id="skills" className="relative py-16 sm:py-24 bg-[#FAFAF9] dark:bg-gray-900 overflow-hidden">
       {/* Decorative Background */}
-      <div className="absolute top-1/4 left-0 w-72 h-72 bg-[#00D4FF]/10 dark:bg-[#00D4FF]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#0A2540]/10 dark:bg-gray-800/20 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-0 w-48 h-48 sm:w-72 sm:h-72 bg-[#00D4FF]/10 dark:bg-[#00D4FF]/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-[#0A2540]/10 dark:bg-gray-800/20 rounded-full blur-3xl" />
 
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -50,7 +50,7 @@ export default function SkillsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] dark:text-gray-100 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0A2540] dark:text-gray-100 mb-4">
             Technical Skills
           </h2>
           <div className="w-24 h-1 bg-linear-to-r from-[#00D4FF] to-[#0A2540] dark:from-[#00D4FF] dark:to-gray-400 mx-auto mb-6" />
@@ -60,7 +60,7 @@ export default function SkillsSection() {
         </motion.div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
@@ -68,13 +68,13 @@ export default function SkillsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
-              className="bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl"
+              className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl"
             >
-              <h3 className="text-2xl font-bold text-[#0A2540] dark:text-gray-100 mb-6 pb-4 border-b-2 border-[#00D4FF]/30 dark:border-gray-700/50">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#0A2540] dark:text-gray-100 mb-4 sm:mb-6 pb-4 border-b-2 border-[#00D4FF]/30 dark:border-gray-700/50">
                 {category.title}
               </h3>
 
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {category.skills.map((skill, skillIndex) => (
                   <motion.div
                     key={skill.name}
@@ -116,11 +116,11 @@ export default function SkillsSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-16 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl"
         >
-          <h3 className="text-2xl font-bold text-[#0A2540] dark:text-gray-100 mb-8 text-center">
+          <h3 className="text-xl sm:text-2xl font-bold text-[#0A2540] dark:text-gray-100 mb-6 sm:mb-8 text-center">
             Core Competencies Overview
           </h3>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
             {[
               { name: 'Frontend', percentage: 90, color: '#00D4FF' },
               { name: 'Backend', percentage: 80, color: '#0066FF' },
@@ -135,7 +135,7 @@ export default function SkillsSection() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="flex flex-col items-center"
               >
-                <div className="relative w-32 h-32 mb-4">
+                <div className="relative w-24 h-24 sm:w-32 sm:h-32 mb-3 sm:mb-4">
                   <svg className="w-full h-full transform -rotate-90">
                     {/* Background Circle */}
                     <circle

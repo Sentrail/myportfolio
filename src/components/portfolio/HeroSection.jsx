@@ -115,17 +115,17 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
       </div>
 
       {/* Content */}
-      <div ref={heroRef} className="relative z-10 max-w-7xl mx-auto px-6 flex items-center justify-between gap-12 md:gap-16 pt-20">
+      <div ref={heroRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 lg:gap-16 pt-8 sm:pt-12 md:pt-20">
         {/* Left Side - Text Content */}
-        <div className="flex-1 text-left">
+        <div className="flex-1 text-left w-full">
           {/* Main Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-6 dark:text-gray-100"
+            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 dark:text-gray-100"
           >
-            <span className="text-4xl md:text-6xl font-bold tracking-tight bg-linear-to-r from-white via-[#00D4FF] to-white bg-clip-text text-transparent">
+            <span className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-linear-to-r from-white via-[#00D4FF] to-white bg-clip-text text-transparent">
               YUSUF ISRAEL TIMILEYIN
             </span>
           </motion.h1>
@@ -134,7 +134,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-3xl text-white/90 font-light mb-4 dark:text-gray-300"
+            className="text-base sm:text-lg md:text-2xl lg:text-3xl text-white/90 font-light mb-3 sm:mb-4 dark:text-gray-300"
           >
             Frontend Developer | Fullstack Engineer | Creative Coder
           </motion.h2>
@@ -143,7 +143,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-base md:text-lg text-white/70 mb-12 dark:text-gray-400"
+            className="text-sm sm:text-base md:text-lg text-white/70 mb-8 sm:mb-12 dark:text-gray-400"
           >
             Crafting intuitive digital experiences with modern technologies.
             Passionate about creating seamless user interfaces and robust backend systems.
@@ -155,9 +155,9 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="shrink-0 -mt-50 -mb-40 pt-1 pb-15"
+          className="shrink-0 w-40 h-56 sm:w-48 sm:h-64 md:w-56 md:h-80 lg:w-72 lg:h-96"
         >
-          <div className="relative w-56 h-80 md:w-72 md:h-96 overflow-hidden rounded-[20px]">
+          <div className="relative w-full h-full overflow-hidden rounded-[20px]">
             {/* White background */}
             <div className="absolute inset-0 bg-white rounded-[28px] border-4 border-white/60"/>
             {/* Image with white border and glow - cycles through images */}
@@ -186,11 +186,11 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
-        className="absolute z-10 flex flex-col sm:flex-row gap-4 justify-center items-center bottom-24 left-1/2 transform -translate-x-1/2"
+        className="relative z-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mt-8 sm:mt-12 px-4"
       >
           <button
             onClick={scrollToProjects}
-            className="group relative px-8 py-4 bg-[#00D4FF] text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 dark:bg-[#00D4FF] dark:text-gray-900"
+            className="group relative px-6 sm:px-8 py-3 sm:py-4 bg-[#00D4FF] text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 dark:bg-[#00D4FF] dark:text-gray-900 w-full sm:w-auto"
           >
             <span className="relative z-10">View Projects</span>
             <div className="absolute inset-0 bg-[#00D4FF] opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
@@ -199,7 +199,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
 
           <button
             onClick={scrollToContact}
-            className="group relative px-8 py-4 border-2 border-[#00D4FF] text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 dark:border-[#00D4FF] dark:text-gray-200 dark:hover:bg-[#00D4FF]/10"
+            className="group relative px-6 sm:px-8 py-3 sm:py-4 border-2 border-[#00D4FF] text-white font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:scale-105 dark:border-[#00D4FF] dark:text-gray-200 dark:hover:bg-[#00D4FF]/10 w-full sm:w-auto"
           >
             <span className="relative z-10">Contact Me</span>
             <div className="absolute inset-0 bg-[#00D4FF] opacity-0 group-hover:opacity-10 transition-opacity duration-300" />

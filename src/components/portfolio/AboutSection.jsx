@@ -21,12 +21,12 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="relative py-24 bg-[#FAFAF9] dark:bg-gray-900 overflow-hidden">
+    <section id="about" className="relative py-16 sm:py-24 bg-[#FAFAF9] dark:bg-gray-900 overflow-hidden">
       {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#00D4FF]/5 dark:bg-[#00D4FF]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#0A2540]/5 dark:bg-gray-800/20 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-48 h-48 sm:w-96 sm:h-96 bg-[#00D4FF]/5 dark:bg-[#00D4FF]/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-[#0A2540]/5 dark:bg-gray-800/20 rounded-full blur-3xl" />
 
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -35,7 +35,7 @@ export default function AboutSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-[#0A2540] dark:text-gray-100 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#0A2540] dark:text-gray-100 mb-4">
             About Me
           </h2>
           <div className="w-24 h-1 bg-linear-to-r from-[#00D4FF] to-[#0A2540] dark:from-[#00D4FF] dark:to-gray-400 mx-auto" />
@@ -49,12 +49,12 @@ export default function AboutSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-4xl mx-auto mb-20"
         >
-          <p className="text-lg text-[#1E293B] dark:text-gray-300 leading-relaxed text-center mb-6">
+          <p className="text-base sm:text-lg text-[#1E293B] dark:text-gray-300 leading-relaxed text-center mb-6">
             I'm a passionate developer on a journey from frontend mastery to fullstack excellence. 
             What started as a fascination with creating beautiful user interfaces has evolved into 
             a comprehensive understanding of web development from pixels to databases.
           </p>
-          <p className="text-lg text-[#1E293B] dark:text-gray-300 leading-relaxed text-center">
+          <p className="text-base sm:text-lg text-[#1E293B] dark:text-gray-300 leading-relaxed text-center">
             My approach combines aesthetic sensibility with technical precision, always striving 
             to create experiences that are both visually stunning and functionally robust. 
             I believe great software is where art meets engineering.
@@ -69,10 +69,10 @@ export default function AboutSection() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="mb-20"
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-[#0A2540] dark:text-gray-100 mb-8 text-center">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0A2540] dark:text-gray-100 mb-6 sm:mb-8 text-center">
             Core Competencies
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
             {skills.map((skill, index) => (
               <motion.div
                 key={skill.name}
@@ -88,9 +88,9 @@ export default function AboutSection() {
                     className="w-16 h-16 rounded-full flex items-center justify-center mb-4"
                     style={{ backgroundColor: `${skill.color}20` }}
                   >
-                    <skill.icon size={32} style={{ color: skill.color }} />
+                    <skill.icon size={24} className="sm:w-8 sm:h-8" style={{ color: skill.color }} />
                   </div>
-                  <h4 className="font-semibold text-[#0A2540] dark:text-gray-100">{skill.name}</h4>
+                  <h4 className="font-semibold text-sm sm:text-base text-[#0A2540] dark:text-gray-100">{skill.name}</h4>
                 </div>
               </motion.div>
             ))}
@@ -104,12 +104,12 @@ export default function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <h3 className="text-2xl md:text-3xl font-bold text-[#0A2540] dark:text-gray-100 mb-12 text-center">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0A2540] dark:text-gray-100 mb-8 sm:mb-12 text-center">
             My Journey
           </h3>
           <div className="relative max-w-4xl mx-auto">
             {/* Timeline Line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-linear-to-b from-[#00D4FF] to-[#0A2540] dark:from-[#00D4FF] dark:to-gray-400" />
+            <div className="absolute left-4 sm:left-1/2 transform sm:-translate-x-1/2 w-1 h-full bg-linear-to-b from-[#00D4FF] to-[#0A2540] dark:from-[#00D4FF] dark:to-gray-400" />
 
             {timeline.map((item, index) => (
               <motion.div
