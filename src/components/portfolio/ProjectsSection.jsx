@@ -199,7 +199,7 @@ export default function ProjectsSection() {
         </motion.div>
 
         {/* Projects Grid - Bento Style */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {projects.slice(0, 6).map((project, index) => (
             <motion.div
               key={project.id}
@@ -214,7 +214,7 @@ export default function ProjectsSection() {
             >
                       <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-[#00D4FF]/50 transition-all duration-300 dark:bg-gray-800/50 dark:border-gray-700/50 dark:hover:border-[#00D4FF]/50">
                 {/* Image */}
-                <div className="relative h-40 sm:h-48 lg:h-64 overflow-hidden">
+                <div className="relative h-32 xs:h-40 sm:h-48 lg:h-64 overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -223,8 +223,8 @@ export default function ProjectsSection() {
                         </div>
 
                         {/* Content */}
-                        <div className="p-4 sm:p-6">
-                          <h3 className="text-lg sm:text-2xl font-bold text-white dark:text-gray-100 mb-2 sm:mb-3 group-hover:text-[#00D4FF] transition-colors duration-300">
+                        <div className="p-3 sm:p-4 md:p-6">
+                          <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white dark:text-gray-100 mb-2 sm:mb-3 group-hover:text-[#00D4FF] transition-colors duration-300">
                             {project.title}
                           </h3>
                           <p className="text-sm sm:text-base text-white/70 dark:text-gray-300 mb-3 sm:mb-4">{project.description}</p>
@@ -337,9 +337,9 @@ export default function ProjectsSection() {
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
-                  className="w-full h-40 sm:h-64 lg:h-96 object-cover"
+                  className="w-full h-32 sm:h-48 md:h-64 lg:h-96 object-cover"
                 />
-                <div className="p-4 sm:p-6 lg:p-8">
+                <div className="p-3 sm:p-4 md:p-6 lg:p-8">
                   <h3 className="text-2xl sm:text-3xl font-bold text-white dark:text-gray-100 mb-3 sm:mb-4">
                     {selectedProject.title}
                   </h3>

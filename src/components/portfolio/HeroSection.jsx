@@ -116,7 +116,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
 
       {/* Content */}
       <div className="flex-1 flex items-center justify-center">
-        <div ref={heroRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 lg:gap-16 pt-8 sm:pt-12 md:pt-20">
+        <div ref={heroRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 md:gap-12 lg:gap-16 pt-8 sm:pt-12 md:pt-20">
           {/* Left Side - Text Content */}
           <div className="flex-1 text-left w-full">
           {/* Main Heading */}
@@ -124,9 +124,9 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 dark:text-gray-100"
+            className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 sm:mb-6 dark:text-gray-100"
           >
-            <span className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-linear-to-r from-white via-[#00D4FF] to-white bg-clip-text text-transparent">
+            <span className="text-xl xs:text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold tracking-tight bg-linear-to-r from-white via-[#00D4FF] to-white bg-clip-text text-transparent">
               YUSUF ISRAEL TIMILEYIN
             </span>
           </motion.h1>
@@ -135,7 +135,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-base sm:text-lg md:text-2xl lg:text-3xl text-white/90 font-light mb-3 sm:mb-4 dark:text-gray-300"
+            className="text-sm sm:text-base md:text-xl lg:text-3xl text-white/90 font-light mb-3 sm:mb-4 dark:text-gray-300"
           >
             Frontend Developer | Fullstack Engineer | Creative Coder
           </motion.h2>
@@ -144,7 +144,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-sm sm:text-base md:text-lg text-white/70 mb-8 sm:mb-12 dark:text-gray-400"
+            className="text-xs sm:text-sm md:text-base lg:text-lg text-white/70 mb-8 sm:mb-12 dark:text-gray-400"
           >
             Crafting intuitive digital experiences with modern technologies.
             Passionate about creating seamless user interfaces and robust backend systems.
@@ -156,7 +156,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="shrink-0 w-40 h-56 sm:w-48 sm:h-64 md:w-56 md:h-80 lg:w-72 lg:h-96"
+          className="shrink-0 w-28 h-40 xs:w-32 xs:h-48 sm:w-40 sm:h-56 md:w-56 md:h-80 lg:w-72 lg:h-96"
         >
           <div className="relative w-full h-full overflow-hidden rounded-[20px]">
             {/* White background */}

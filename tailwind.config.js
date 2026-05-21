@@ -11,6 +11,9 @@ export default {
         primary: '#00D4FF',
         navy: '#0A2540',
       },
+      screens: {
+        xs: '375px',
+      },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
       },

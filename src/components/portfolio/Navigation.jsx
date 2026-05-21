@@ -80,12 +80,12 @@ export default function Navigation() {
         isScrolled ? 'bg-[#0A2540]/95 dark:bg-gray-100/95 backdrop-blur-md shadow-lg' : 'bg-[#0A2540] dark:bg-gray-100 backdrop-blur-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4">
+      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <motion.button
             onClick={() => scrollToSection('#hero')}
-            className="text-2xl font-bold text-white dark:text-gray-900 hover:text-[#00D4FF] dark:hover:text-[#0066FF] transition-colors duration-300"
+            className="text-lg sm:text-xl md:text-2xl font-bold text-white dark:text-gray-900 hover:text-[#00D4FF] dark:hover:text-[#0066FF] transition-colors duration-300"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -159,7 +159,7 @@ export default function Navigation() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: '100%' }}
             transition={{ duration: 0.3 }}
-            className="md:hidden fixed inset-y-0 right-0 w-64 bg-[#0A2540] dark:bg-gray-100 shadow-2xl"
+            className="md:hidden fixed inset-y-0 right-0 w-[80%] max-w-xs bg-[#0A2540] dark:bg-gray-100 shadow-2xl"
           >
             <div className="flex flex-col space-y-6 p-8 pt-20">
               {navItems.map((item, index) => (
@@ -169,7 +169,7 @@ export default function Navigation() {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-white hover:text-[#00D4FF] text-xl font-medium transition-colors duration-300 text-left dark:text-gray-200 dark:hover:text-[#00D4FF]"
+                  className="text-white hover:text-[#00D4FF] text-lg sm:text-xl font-medium transition-colors duration-300 text-left dark:text-gray-200 dark:hover:text-[#00D4FF]"
                 >
                   {item.label}
                 </motion.button>

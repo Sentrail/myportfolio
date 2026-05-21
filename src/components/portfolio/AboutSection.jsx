@@ -49,12 +49,12 @@ export default function AboutSection() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="max-w-4xl mx-auto mb-20"
         >
-          <p className="text-base sm:text-lg text-[#1E293B] dark:text-gray-300 leading-relaxed text-center mb-6">
+          <p className="text-sm sm:text-base md:text-lg text-[#1E293B] dark:text-gray-300 leading-relaxed text-center mb-6">
             I'm a passionate developer on a journey from frontend mastery to fullstack excellence. 
             What started as a fascination with creating beautiful user interfaces has evolved into 
             a comprehensive understanding of web development from pixels to databases.
           </p>
-          <p className="text-base sm:text-lg text-[#1E293B] dark:text-gray-300 leading-relaxed text-center">
+          <p className="text-sm sm:text-base md:text-lg text-[#1E293B] dark:text-gray-300 leading-relaxed text-center">
             My approach combines aesthetic sensibility with technical precision, always striving 
             to create experiences that are both visually stunning and functionally robust. 
             I believe great software is where art meets engineering.
@@ -72,7 +72,7 @@ export default function AboutSection() {
           <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0A2540] dark:text-gray-100 mb-6 sm:mb-8 text-center">
             Core Competencies
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
             {skills.map((skill, index) => (
               <motion.div
                 key={skill.name}
@@ -81,11 +81,11 @@ export default function AboutSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05, y: -5 }}
-                className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300"
+                className="bg-white dark:bg-gray-800 rounded-xl p-3 sm:p-4 md:p-6 shadow-lg hover:shadow-2xl transition-all duration-300"
               >
                 <div className="flex flex-col items-center text-center">
                   <div
-                    className="w-16 h-16 rounded-full flex items-center justify-center mb-4"
+                    className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mb-4"
                     style={{ backgroundColor: `${skill.color}20` }}
                   >
                     <skill.icon size={24} className="sm:w-8 sm:h-8" style={{ color: skill.color }} />
@@ -123,7 +123,7 @@ export default function AboutSection() {
                 }`}
               >
                 <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8'}`}>
-                  <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg">
+                  <div className="bg-white dark:bg-gray-800 rounded-xl p-3 sm:p-4 md:p-6 shadow-lg">
                     <span className="text-[#00D4FF] dark:text-[#00D4FF] font-bold text-lg">{item.year}</span>
                     <h4 className="text-xl font-bold text-[#0A2540] dark:text-gray-100 mt-2">{item.title}</h4>
                     <p className="text-[#1E293B] dark:text-gray-300 mt-2">{item.description}</p>
