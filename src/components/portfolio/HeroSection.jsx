@@ -63,7 +63,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
   };
 
   return (
-    <section id="hero" className="full-bleed relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-[#0A2540] via-[#0D3A5F] to-[#0A2540] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <section id="hero" className="full-bleed relative min-h-screen flex flex-col items-center justify-between overflow-hidden bg-linear-to-br from-[#0A2540] via-[#0D3A5F] to-[#0A2540] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
       
       {/* Animated Background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -115,9 +115,10 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
       </div>
 
       {/* Content */}
-      <div ref={heroRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 lg:gap-16 pt-8 sm:pt-12 md:pt-20">
-        {/* Left Side - Text Content */}
-        <div className="flex-1 text-left w-full">
+      <div className="flex-1 flex items-center justify-center">
+        <div ref={heroRef} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12 lg:gap-16 pt-8 sm:pt-12 md:pt-20">
+          {/* Left Side - Text Content */}
+          <div className="flex-1 text-left w-full">
           {/* Main Heading */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
@@ -179,6 +180,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
             </AnimatePresence>
           </div>
         </motion.div>
+        </div>
       </div>
 
       {/* CTA Buttons */}
@@ -186,7 +188,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
-        className="relative z-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mt-8 sm:mt-12 px-4"
+        className="relative z-10 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center pb-20 px-4"
       >
           <button
             onClick={scrollToProjects}
@@ -212,7 +214,7 @@ const orbs = Array.from({ length: 5 }, (_, i) => ({
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        className="absolute bottom-2 left-1/2 transform -translate-x-1/2 z-10"
       >
         <ChevronDown className="w-8 h-8 text-white/50 dark:text-gray-400" />
       </motion.div>
