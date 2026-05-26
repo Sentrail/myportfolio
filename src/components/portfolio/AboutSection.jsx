@@ -104,12 +104,12 @@ export default function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#0A2540] dark:text-gray-100 mb-8 sm:mb-12 text-center">
+          <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-[#0A2540] dark:text-gray-100 mb-6 sm:mb-8 md:mb-12 lg:mb-16 text-center">
             My Journey
           </h3>
-          <div className="relative max-w-4xl mx-auto">
+          <div className="relative max-w-4xl mx-auto px-2 sm:px-4">
             {/* Timeline Line */}
-            <div className="absolute left-4 sm:left-1/2 transform sm:-translate-x-1/2 w-1 h-full bg-linear-to-b from-[#00D4FF] to-[#0A2540] dark:from-[#00D4FF] dark:to-gray-400" />
+            <div className="absolute left-3 sm:left-6 md:left-1/2 transform md:-translate-x-1/2 w-0.5 sm:w-1 h-full bg-linear-to-b from-[#00D4FF] to-[#0A2540] dark:from-[#00D4FF] dark:to-gray-400" />
 
             {timeline.map((item, index) => (
               <motion.div
@@ -118,18 +118,18 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
-                className={`relative flex items-center mb-12 ${
-                  index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                className={`relative flex items-center mb-8 sm:mb-10 md:mb-12 lg:mb-16 ${
+                  index % 2 === 0 ? 'flex-row md:flex-row' : 'flex-row md:flex-row-reverse'
                 }`}
               >
-                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8'}`}>
-                  <div className="bg-white dark:bg-gray-800 rounded-xl p-3 sm:p-4 md:p-6 shadow-lg">
-                    <span className="text-[#00D4FF] dark:text-[#00D4FF] font-bold text-lg">{item.year}</span>
-                    <h4 className="text-xl font-bold text-[#0A2540] dark:text-gray-100 mt-2">{item.title}</h4>
-                    <p className="text-[#1E293B] dark:text-gray-300 mt-2">{item.description}</p>
+                <div className={`w-full sm:w-4/5 md:w-1/2 ${index % 2 === 0 ? 'md:pr-8 md:text-right pl-12 sm:pl-14 md:pl-0' : 'md:pl-8 pl-12 sm:pl-14 md:text-left'}`}>
+                  <div className="bg-white dark:bg-gray-800 rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 lg:p-6 shadow-md sm:shadow-lg hover:shadow-xl transition-shadow">
+                    <span className="text-xs sm:text-sm md:text-base lg:text-lg text-[#00D4FF] dark:text-[#00D4FF] font-bold">{item.year}</span>
+                    <h4 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-[#0A2540] dark:text-gray-100 mt-1 sm:mt-2">{item.title}</h4>
+                    <p className="text-xs sm:text-sm md:text-base lg:text-base text-[#1E293B] dark:text-gray-300 mt-1 sm:mt-2 leading-relaxed">{item.description}</p>
                   </div>
                 </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-[#00D4FF] dark:bg-[#00D4FF] rounded-full border-4 border-white dark:border-gray-900 shadow-lg" />
+                <div className="absolute left-1 sm:left-2 md:left-1/2 transform md:-translate-x-1/2 w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6 bg-[#00D4FF] dark:bg-[#00D4FF] rounded-full border-2 sm:border-3 md:border-4 border-white dark:border-gray-900 shadow-md md:shadow-lg" />
               </motion.div>
             ))}
           </div>

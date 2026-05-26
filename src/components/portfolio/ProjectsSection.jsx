@@ -199,7 +199,7 @@ export default function ProjectsSection() {
         </motion.div>
 
         {/* Projects Grid - Bento Style */}
-        <div className="grid grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-1 xs:grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {projects.slice(0, 6).map((project, index) => (
             <motion.div
               key={project.id}
@@ -214,7 +214,7 @@ export default function ProjectsSection() {
             >
                       <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-[#00D4FF]/50 transition-all duration-300 dark:bg-gray-800/50 dark:border-gray-700/50 dark:hover:border-[#00D4FF]/50">
                 {/* Image */}
-                <div className="relative h-32 xs:h-40 sm:h-48 lg:h-64 overflow-hidden">
+                <div className="relative h-32 xs:text-base sm:text-lg md:text-xl lg:text-2xl overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}

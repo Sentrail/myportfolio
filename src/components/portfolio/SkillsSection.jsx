@@ -60,7 +60,7 @@ export default function SkillsSection() {
         </motion.div>
 
         {/* Skills Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.title}
@@ -68,9 +68,9 @@ export default function SkillsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
-              className="bg-white dark:bg-gray-800 rounded-2xl p-6 sm:p-8 shadow-xl"
+              className="bg-white dark:bg-gray-800 rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl"
             >
-              <h3 className="text-xl sm:text-2xl font-bold text-[#0A2540] dark:text-gray-100 mb-4 sm:mb-6 pb-4 border-b-2 border-[#00D4FF]/30 dark:border-gray-700/50">
+              <h3 className="p-4 sm:p-6 mtext-lg sm:text-xl md:text-2xld:p-8 font-bold text-[#0A2540] dark:text-gray-100 mb-4 sm:mb-6 pb-4 border-b-2 border-[#00D4FF]/30 dark:border-gray-700/50">
                 {category.title}
               </h3>
 
@@ -109,75 +109,93 @@ export default function SkillsSection() {
 
 
         {/* Radial Skills Visualization */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="mt-16 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-xl"
-        >
-          <h3 className="text-xl sm:text-2xl font-bold text-[#0A2540] dark:text-gray-100 mb-6 sm:mb-8 text-center">
-            Core Competencies Overview
-          </h3>
+<motion.div
+  initial={{ opacity: 0, scale: 0.9 }}
+  whileInView={{ opacity: 1, scale: 1 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.8, delay: 0.4 }}
+  className="mt-8 sm:mt-12 md:mt-16 bg-white dark:bg-gray-800 rounded-xl sm:rounded-2xl p-3 max-[375px]:p-3 sm:p-6 md:p-8 shadow-xl"
+>
+  <h3 className="text-base max-[375px]:text-sm sm:text-xl md:text-2xl font-bold text-[#0A2540] dark:text-gray-100 mb-4 sm:mb-6 md:mb-8 text-center leading-snug">
+    Core Competencies Overview
+  </h3>
 
-          <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-            {[
-              { name: 'Frontend', percentage: 90, color: '#00D4FF' },
-              { name: 'Backend', percentage: 80, color: '#0066FF' },
-              { name: 'Database', percentage: 85, color: '#4ECDC4' },
-              { name: 'DevOps', percentage: 70, color: '#FFD93D' },
-            ].map((skill, index) => (
-              <motion.div
-                key={skill.name}
-                initial={{ opacity: 0, scale: 0 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="flex flex-col items-center"
-              >
-                <div className="relative w-24 h-24 sm:w-32 sm:h-32 mb-3 sm:mb-4">
-                  <svg className="w-full h-full transform -rotate-90">
-                    {/* Background Circle */}
-                    <circle
-                      cx="64"
-                      cy="64"
-                      r="56"
-                      fill="none"
-                      stroke="#E5E7EB"
-                      strokeWidth="8"
-                    />
-                    {/* Progress Circle */}
-                    <motion.circle
-                      cx="64"
-                      cy="64"
-                      r="56"
-                      fill="none"
-                      stroke={skill.color}
-                      strokeWidth="8"
-                      strokeLinecap="round"
-                      initial={{ strokeDashoffset: 352 }}
-                      whileInView={{
-                        strokeDashoffset: 352 - (352 * skill.percentage) / 100,
-                      }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.5, delay: index * 0.2, ease: 'easeOut' }}
-                      style={{
-                        strokeDasharray: 352,
-                        filter: `drop-shadow(0 0 8px ${skill.color}40)`,
-                      }}
-                    />
-                  </svg>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <span className="text-2xl font-bold text-[#0A2540]">
-                      {skill.percentage}%
-                    </span>
-                  </div>
-                </div>
-                <span className="text-[#0A2540] font-semibold">{skill.name}</span>
-              </motion.div>
-            ))}
+  <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-[375px]:gap-2 sm:gap-6 lg:gap-8">
+    {[
+      { name: 'Frontend', percentage: 90, color: '#00D4FF' },
+      { name: 'Backend', percentage: 80, color: '#0066FF' },
+      { name: 'Database', percentage: 85, color: '#4ECDC4' },
+      { name: 'DevOps', percentage: 70, color: '#FFD93D' },
+    ].map((skill, index) => (
+      <motion.div
+        key={skill.name}
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: index * 0.1 }}
+        className="flex flex-col items-center"
+      >
+        <div className="relative
+          w-14 h-14
+          max-[375px]:w-12 max-[375px]:h-12
+          sm:w-20 sm:h-20
+          md:w-24 md:h-24
+          lg:w-32 lg:h-32
+          mb-2 sm:mb-3 md:mb-4"
+        >
+          <svg className="w-full h-full transform -rotate-90" viewBox="0 0 128 128">
+            {/* Background Circle */}
+            <circle
+              cx="64"
+              cy="64"
+              r="56"
+              fill="none"
+              stroke="#E5E7EB"
+              strokeWidth="8"
+              className="stroke-6 max-[375px]:stroke-5 sm:stroke-7 md:stroke-8"
+            />
+
+            {/* Progress Circle */}
+            <motion.circle
+              cx="64"
+              cy="64"
+              r="56"
+              fill="none"
+              stroke={skill.color}
+              strokeWidth="8"
+              strokeLinecap="round"
+              initial={{ strokeDashoffset: 352 }}
+              whileInView={{
+                strokeDashoffset: 352 - (352 * skill.percentage) / 100,
+              }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 1.5,
+                delay: index * 0.2,
+                ease: 'easeOut',
+              }}
+              className="stroke-6 max-[375px]:stroke-5 sm:stroke-7 md:stroke-8"
+              style={{
+                strokeDasharray: 352,
+                filter: `drop-shadow(0 0 8px ${skill.color}40)`,
+              }}
+            />
+          </svg>
+
+          <div className="absolute inset-0 flex items-center justify-center">
+            <span className="text-[10px] max-[375px]:text-[9px] sm:text-sm md:text-lg lg:text-2xl font-bold text-[#0A2540] dark:text-gray-100">
+              {skill.percentage}%
+            </span>
           </div>
-        </motion.div>
+        </div>
+
+        <span className="text-[10px] max-[375px]:text-[9px] sm:text-xs md:text-sm font-semibold text-[#0A2540] dark:text-gray-100 text-center">
+          {skill.name}
+        </span>
+      </motion.div>
+    ))}
+  </div>
+</motion.div>
       </div>
 
      `
