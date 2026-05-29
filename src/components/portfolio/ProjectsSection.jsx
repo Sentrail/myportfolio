@@ -170,6 +170,16 @@ export default function ProjectsSection() {
       liveUrl: 'https://kingfisherafrica.rf.gd/',
       githubUrl: 'https://github.com/Sentrail/KingFisher_Africa',
     },
+    {
+      id: 18,
+      title: 'Grand Horizon Hotel',
+      description: 'Grand Horizon Hotel is a luxurious accommodation option in Lagos, offering guests a blend of modern comfort and traditional hospitality. With its prime location, elegant rooms, and exceptional service, it provides an ideal retreat for both business and leisure travelers.',
+      longDescription: 'Grand Horizon Hotel stands as a premier destination for discerning travelers seeking a perfect blend of comfort and sophistication. Located in the heart of Lagos, the hotel features stylishly appointed rooms, world-class amenities, and a commitment to excellence that ensures every guest enjoys an unforgettable stay. Whether you’re visiting for business or pleasure, Grand Horizon Hotel delivers an unparalleled experience of luxury and service.',
+      image: '/img/hotel-bg.jpg',
+      tags: ['PHP', 'JavaScript', 'HTML', 'CSS'],
+      liveUrl: 'https://grand-horizon.rf.gd/?i=1',
+      githubUrl: 'https://github.com/Sentrail/Grand_Horizon',
+    },
 
   ];
 
