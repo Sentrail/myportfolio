@@ -180,6 +180,16 @@ export default function ProjectsSection() {
       liveUrl: 'https://grand-horizon.rf.gd/?i=1',
       githubUrl: 'https://github.com/Sentrail/Grand_Horizon',
     },
+    {
+      id: 19,
+      title: 'Lumina Fine Dining',
+      description: 'Lumina Fine Dining is a culinary destination in Lagos, offering an exquisite array of international dishes prepared with the finest ingredients and presented with artistic flair.',
+      longDescription: 'Lumina Fine Dining stands as a beacon of gastronomic excellence in Lagos, where every dish is a masterpiece crafted by skilled chefs who blend traditional techniques with modern innovation. The restaurant’s elegant ambiance and impeccable service create an unforgettable dining experience for discerning guests.',
+      image: '/img/hero-bg.jpg',
+      tags: ['PHP', 'JavaScript', 'HTML', 'CSS'],
+      liveUrl: 'https://lumina-fine.rf.gd/?i=1',
+      githubUrl: 'https://github.com/Sentrail/Lumina_Fine',
+    },
 
   ];
 
