@@ -209,18 +209,18 @@ export default function ProjectsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white dark:text-gray-100 mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white dark:text-gray-100 mb-3">
             Featured Projects
           </h2>
-          <div className="w-24 h-1 bg-linear-to-r from-[#00D4FF] to-white mx-auto mb-6" />
-          <p className="text-white/70 dark:text-gray-300 text-base sm:text-lg max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-linear-to-r from-[#00D4FF] to-white mx-auto mb-4" />
+          <p className="text-white/70 dark:text-gray-300 text-sm sm:text-base max-w-2xl mx-auto">
             A showcase of my recent work, demonstrating expertise across the full stack
           </p>
         </motion.div>
 
         {/* Projects Grid - Bento Style */}
-        <div className="grid grid-cols-1 xs:grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-          {projects.slice(0, 6).map((project, index) => (
+        <div className="grid grid-cols-1 xs:grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+          {projects.slice(0, 8).map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
@@ -234,7 +234,7 @@ export default function ProjectsSection() {
             >
                       <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-[#00D4FF]/50 transition-all duration-300 dark:bg-gray-800/50 dark:border-gray-700/50 dark:hover:border-[#00D4FF]/50">
                 {/* Image */}
-                <div className="relative h-32 xs:text-base sm:text-lg md:text-xl lg:text-2xl overflow-hidden">
+                <div className="relative h-24 xs:text-base sm:text-lg md:text-xl lg:text-2xl overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -243,18 +243,18 @@ export default function ProjectsSection() {
                         </div>
 
                         {/* Content */}
-                        <div className="p-3 sm:p-4 md:p-6">
-                          <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-white dark:text-gray-100 mb-2 sm:mb-3 group-hover:text-[#00D4FF] transition-colors duration-300">
+                        <div className="p-2 sm:p-3 md:p-4">
+                          <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-white dark:text-gray-100 mb-1 sm:mb-2 group-hover:text-[#00D4FF] transition-colors duration-300">
                             {project.title}
                           </h3>
-                          <p className="text-sm sm:text-base text-white/70 dark:text-gray-300 mb-3 sm:mb-4">{project.description}</p>
+                          <p className="text-xs sm:text-sm text-white/70 dark:text-gray-300 mb-2 sm:mb-3">{project.description}</p>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
+                  <div className="flex flex-wrap gap-1 mb-2">
                     {project.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 sm:px-3 py-0.5 sm:py-1 bg-[#00D4FF]/20 text-[#00D4FF] text-xs sm:text-sm rounded-full border border-[#00D4FF]/30"
+                        className="px-2 py-0.5 bg-[#00D4FF]/20 text-[#00D4FF] text-xs rounded-full border border-[#00D4FF]/30"
                       >
                         {tag}
                       </span>
@@ -262,21 +262,21 @@ export default function ProjectsSection() {
                   </div>
 
                   {/* Links */}
-                  <div className="flex flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm">
+                  <div className="flex flex-wrap gap-2 text-xs">
                     <a
                       href={project.liveUrl}
                       onClick={(e) => e.stopPropagation()}
-                      className="flex items-center gap-1 sm:gap-2 text-white/70 hover:text-[#00D4FF] transition-colors duration-300 dark:text-gray-300 dark:hover:text-[#00D4FF]"
+                      className="flex items-center gap-1 text-white/70 hover:text-[#00D4FF] transition-colors duration-300 dark:text-gray-300 dark:hover:text-[#00D4FF]"
                     >
-                      <ExternalLink size={14} className="sm:w-5 sm:h-5" />
-                      <span>Live Demo</span>
+                      <ExternalLink size={12} />
+                      <span>Live</span>
                     </a>
                     <a
                       href={project.githubUrl}
                       onClick={(e) => e.stopPropagation()}
-                      className="flex items-center gap-1 sm:gap-2 text-white/70 hover:text-[#00D4FF] transition-colors duration-300 dark:text-gray-300 dark:hover:text-[#00D4FF]"
+                      className="flex items-center gap-1 text-white/70 hover:text-[#00D4FF] transition-colors duration-300 dark:text-gray-300 dark:hover:text-[#00D4FF]"
                     >
-                      <Github size={14} className="sm:w-5 sm:h-5" />
+                      <Github size={12} />
                       <span>Code</span>
                     </a>
                   </div>
@@ -357,22 +357,22 @@ export default function ProjectsSection() {
                 <img
                   src={selectedProject.image}
                   alt={selectedProject.title}
-                  className="w-full h-32 sm:h-48 md:h-64 lg:h-96 object-cover"
+                  className="w-full h-24 sm:h-32 md:h-48 lg:h-64 object-cover"
                 />
-                <div className="p-3 sm:p-4 md:p-6 lg:p-8">
-                  <h3 className="text-2xl sm:text-3xl font-bold text-white dark:text-gray-100 mb-3 sm:mb-4">
+                <div className="p-2 sm:p-3 md:p-4 lg:p-6">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white dark:text-gray-100 mb-2 sm:mb-3">
                     {selectedProject.title}
                   </h3>
-                  <p className="text-sm sm:text-base lg:text-lg text-white/80 dark:text-gray-200 mb-4 sm:mb-6 leading-relaxed">
+                  <p className="text-xs sm:text-sm lg:text-base text-white/80 dark:text-gray-200 mb-3 sm:mb-4 leading-relaxed">
                     {selectedProject.longDescription}
                   </p>
 
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
+                  <div className="flex flex-wrap gap-2 mb-3">
                     {selectedProject.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="px-2 sm:px-4 py-1 sm:py-2 bg-[#00D4FF]/20 text-[#00D4FF] text-xs sm:text-base rounded-full border border-[#00D4FF]/30"
+                        className="px-2 py-1 bg-[#00D4FF]/20 text-[#00D4FF] text-xs rounded-full border border-[#00D4FF]/30"
                       >
                         {tag}
                       </span>
@@ -380,19 +380,19 @@ export default function ProjectsSection() {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <div className="flex flex-col sm:flex-row gap-2">
                     <a
                       href={selectedProject.liveUrl}
-                      className="flex items-center justify-center gap-2 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base bg-[#00D4FF] text-[#0A2540] dark:text-gray-900 font-semibold rounded-lg hover:bg-[#00D4FF]/90 transition-colors duration-300"
+                      className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 text-xs sm:text-sm bg-[#00D4FF] text-[#0A2540] dark:text-gray-900 font-semibold rounded-lg hover:bg-[#00D4FF]/90 transition-colors duration-300"
                     >
-                      <ExternalLink size={16} className="sm:w-5 sm:h-5" />
-                      View Live Demo
+                      <ExternalLink size={14} className="sm:w-4 sm:h-4" />
+                      View Live
                     </a>
                     <a
                       href={selectedProject.githubUrl}
-                      className="flex items-center justify-center gap-2 px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base border-2 border-[#00D4FF] text-white dark:text-gray-200 font-semibold rounded-lg hover:bg-[#00D4FF]/10 transition-colors duration-300"
+                      className="flex items-center justify-center gap-2 px-3 sm:px-4 py-2 text-xs sm:text-sm border-2 border-[#00D4FF] text-white dark:text-gray-200 font-semibold rounded-lg hover:bg-[#00D4FF]/10 transition-colors duration-300"
                     >
-                      <Github size={16} className="sm:w-5 sm:h-5" />
+                      <Github size={14} className="sm:w-4 sm:h-4" />
                       View Code
                     </a>
                   </div>
@@ -429,17 +429,17 @@ export default function ProjectsSection() {
               </button>
 
               {/* Modal Header */}
-              <div className="p-8 pb-6">
-                <h3 className="text-3xl font-bold text-white dark:text-gray-100 mb-2">
+              <div className="p-4 pb-3">
+                <h3 className="text-2xl font-bold text-white dark:text-gray-100 mb-1">
                   All Projects
                 </h3>
-                <p className="text-white/70 dark:text-gray-300">
+                <p className="text-white/70 dark:text-gray-300 text-sm">
                   Complete showcase of my work across different technologies and domains
                 </p>
               </div>
 
               {/* Projects Grid in Modal */}
-              <div className="px-8 pb-8">
+              <div className="px-4 pb-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-h-[60vh] overflow-y-auto">
                   {projects.map((project, index) => (
                     <motion.div
@@ -456,7 +456,7 @@ export default function ProjectsSection() {
                     >
                       <div className="relative h-full bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-[#00D4FF]/50 transition-all duration-300 dark:bg-gray-800/50 dark:border-gray-700/50 dark:hover:border-[#00D4FF]/50">
                         {/* Image */}
-                        <div className="relative h-48 overflow-hidden">
+                        <div className="relative h-36 overflow-hidden">
                           <img
                             src={project.image}
                             alt={project.title}
@@ -466,11 +466,11 @@ export default function ProjectsSection() {
                         </div>
 
                         {/* Content */}
-                        <div className="p-4">
-                          <h4 className="text-xl font-bold text-white mb-2 group-hover:text-[#00D4FF] transition-colors duration-300">
+                        <div className="p-3">
+                          <h4 className="text-lg font-bold text-white mb-1 group-hover:text-[#00D4FF] transition-colors duration-300">
                             {project.title}
                           </h4>
-                          <p className="text-white/70 text-sm mb-3 line-clamp-2">{project.description}</p>
+                          <p className="text-white/70 text-xs mb-2 line-clamp-2">{project.description}</p>
 
                           {/* Tags */}
                           <div className="flex flex-wrap gap-1 mb-3">
@@ -490,21 +490,21 @@ export default function ProjectsSection() {
                           </div>
 
                           {/* Links */}
-                          <div className="flex gap-3">
+                          <div className="flex gap-2">
                             <a
                               href={project.liveUrl}
                               onClick={(e) => e.stopPropagation()}
-                              className="flex items-center gap-1 text-white/70 hover:text-[#00D4FF] transition-colors duration-300 text-sm"
+                              className="flex items-center gap-1 text-white/70 hover:text-[#00D4FF] transition-colors duration-300 text-xs"
                             >
-                              <ExternalLink size={14} />
+                              <ExternalLink size={12} />
                               <span>Live</span>
                             </a>
                             <a
                               href={project.githubUrl}
                               onClick={(e) => e.stopPropagation()}
-                              className="flex items-center gap-1 text-white/70 hover:text-[#00D4FF] transition-colors duration-300 text-sm"
+                              className="flex items-center gap-1 text-white/70 hover:text-[#00D4FF] transition-colors duration-300 text-xs"
                             >
-                              <Github size={14} />
+                              <Github size={12} />
                               <span>Code</span>
                             </a>
                           </div>
