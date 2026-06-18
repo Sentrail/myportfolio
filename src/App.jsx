@@ -3,6 +3,7 @@ import Navigation from './components/portfolio/Navigation';
 import HeroSection from './components/portfolio/HeroSection';
 import AboutSection from './components/portfolio/AboutSection';
 import ProjectsSection from './components/portfolio/ProjectsSection';
+import LiveProjectsSection from './components/portfolio/LiveProjectsSection';
 import SkillsSection from './components/portfolio/SkillsSection';
 import ContactSection from './components/portfolio/ContactSection';
 import './App.css'; // Optional, for any global styles
@@ -14,6 +15,7 @@ export default function App() {
       <HeroSection />
       <AboutSection />
       <ProjectsSection />
+      <LiveProjectsSection />
       <SkillsSection />
       <ContactSection />
     </div>
