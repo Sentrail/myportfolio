@@ -120,6 +120,7 @@ export default function LiveProjectsSection() {
           </p>
         </motion.div>
 
+
         {/* Projects Grid - Bento Style */}
         <div className="grid grid-cols-1 xs:grid-cols-1 xs:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {projects.slice(0, 8).map((project, index) => (
